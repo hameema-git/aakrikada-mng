@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1e2a78">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Aakrikada">
+
+<title>Aakrikada – Kerala Scrap Merchants Association (membership demo)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--p:#1e2a78;--ph:#17205c;--ps:#eceffc;--a:#17794a;--as:#e5f4ec;--y:#f2b632;--ink:#161a33;--mu:#454b6b;--ln:#d3d8ea;--bg:#f6f7fb;--dk:#12184f;--warn:#8f5200;--r:16px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,'Noto Sans Malayalam','Noto Sans Tamil',system-ui,sans-serif;overflow-x:hidden}
+html[lang=ml] body,html[lang=ta] body{line-height:1.8}
+h1,h2,h3,p,li,a,span,label,td{overflow-wrap:anywhere}
+h1,h2,h3{margin:0;line-height:1.3}p{margin:0}ul,ol{list-style:none;margin:0;padding:0}
+a{color:var(--p)}:focus-visible{outline:3px solid #3b4bd8;outline-offset:2px}
+svg{display:block;max-width:100%;height:auto}
+.c{max-width:1160px;margin:auto;padding:0 16px}
+.btn{white-space:normal;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:10px;border:2px solid var(--p);background:var(--p);color:#fff;font-weight:600;font-size:1rem;font-family:inherit;text-decoration:none;cursor:pointer;text-align:center}
+.btn:hover{background:var(--ph)}
+.btn.s{background:#fff;color:var(--p)}.btn.s:hover{background:var(--ps)}
+.btn.l{background:var(--y);border-color:var(--y);color:#2a1f00}.btn.l:hover{background:#ffc94d}
+.btn.g{background:transparent;border-color:rgba(255,255,255,.75);color:#fff}.btn.g:hover{background:rgba(255,255,255,.14)}
+.btn.sm{min-height:40px;padding:0 16px;font-size:.95rem}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--ln)}
+.bar{display:flex;align-items:center;gap:12px;min-height:68px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:1.25rem;color:var(--p);text-decoration:none;white-space:nowrap;overflow-wrap:normal}
+.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--p);color:#fff;font-size:1.2rem}
+.nav{display:none;gap:2px;margin-left:8px}.topbar{display:none}
+.nav a{padding:10px 9px;border-radius:10px;color:var(--ink);font-weight:600;font-size:.9rem;text-decoration:none;white-space:nowrap;overflow-wrap:normal}
+.nav a:hover{background:var(--bg);color:var(--p)}.nav a.on{background:var(--ps);color:var(--p)}
+.act{display:flex;align-items:center;gap:10px;margin-left:auto}
+select,input,textarea{min-height:46px;padding:10px 12px;border:1.5px solid var(--ln);border-radius:10px;background:#fff;font:inherit;width:100%}
+textarea{min-height:110px}
+.act select{min-height:40px;padding:0 8px;width:auto;max-width:120px;font-weight:600}
+.burger{width:46px;height:46px;border:1.5px solid var(--ln);background:#fff;border-radius:10px;font-size:1.4rem;color:var(--p);cursor:pointer}
+.login{display:none;white-space:nowrap}
+#menu{display:none;flex-direction:column;border-top:1px solid var(--ln);background:#fff;padding:8px 16px 20px;max-height:calc(100vh - 70px);overflow:auto}
+#menu.open{display:flex}
+#menu a.n{padding:14px 4px;border-bottom:1px solid var(--ln);font-weight:600;text-decoration:none;color:var(--ink)}
+#menu .btn{margin-top:12px}
+@media(min-width:1180px){.nav{display:flex;margin-left:auto}.burger,#menu{display:none!important}.act{display:none}.topbar{display:block}
+html[lang=ml] .nav,html[lang=ta] .nav{display:none}html[lang=ml] .act,html[lang=ta] .act{display:flex}html[lang=ml] .burger,html[lang=ta] .burger{display:grid!important}html[lang=ml] #menu.open,html[lang=ta] #menu.open{display:flex!important}html[lang=ml] .act select,html[lang=ta] .act select{display:none}}
+.topbar{background:var(--ps);border-bottom:1px solid var(--ln)}.topbar .c{display:flex;justify-content:flex-end;align-items:center;gap:12px;min-height:50px}.topbar select{width:auto;min-height:38px;padding:0 8px;font-weight:600}
+.hero{background:var(--p);color:#fff;padding:40px 0}
+.hg{display:grid;gap:32px;align-items:center}
+.kick{display:inline-block;font-weight:700;letter-spacing:.12em;font-size:.85rem;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.14);margin-bottom:16px}
+.hero h1{font-size:clamp(1.8rem,1.1rem + 3.6vw,3.2rem);max-width:18ch}
+.lead{margin-top:16px;max-width:54ch;color:#dfe3fa;font-size:1.1rem}
+.hb{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.hart{border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.sbox{margin-top:-40px;position:relative;z-index:2;padding-bottom:32px}
+.card.sform{display:grid;gap:12px;align-items:end}
+@media(max-width:559px){.hb .btn{width:100%}}
+@media(min-width:760px){.card.sform{grid-template-columns:2fr 1.4fr auto}}
+@media(min-width:960px){.hero{padding:64px 0 80px}.hg{grid-template-columns:1.05fr .95fr;gap:48px}}
+.card{background:#fff;border:1px solid var(--ln);border-radius:var(--r);padding:24px;box-shadow:0 1px 2px rgba(22,26,51,.06),0 6px 20px rgba(22,26,51,.06);display:flex;flex-direction:column;gap:12px;color:var(--ink);min-width:0}
+.card p{color:var(--mu)}.card h3{font-size:1.15rem}
+.card.img{padding:0;overflow:hidden}.card.img .b{padding:20px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.fl{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:.95rem}
+section.sec{padding:48px 0}.alt{background:#fff;border-block:1px solid var(--ln)}
+.dark{background:var(--dk);color:#fff}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+h2.t{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.1rem)}
+.sub{color:var(--mu);margin-top:6px;max-width:60ch}.dark .sub{color:#cfd4f5}
+.grid{display:grid;gap:16px}
+@media(min-width:640px){.g2,.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:960px){.g3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.step .n{width:56px;height:56px;border-radius:16px;background:var(--ps);display:grid;place-items:center;font-size:1.7rem;position:relative}
+.step .n b{position:absolute;top:-8px;right:-8px;width:24px;height:24px;border-radius:50%;background:var(--p);color:#fff;font-size:.8rem;display:grid;place-items:center}
+.phtag{display:inline-block;align-self:flex-start;padding:2px 10px;border-radius:6px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--warn);background:#fff3d6;border:1px dashed var(--warn)}
+.empty{border:2px dashed var(--ln);border-radius:var(--r);padding:32px 16px;text-align:center;color:var(--mu);background:#fff}
+.empty h3{color:var(--ink)}
+.q{margin:0;gap:12px}.q p{color:var(--ink)}.q b{color:var(--p)}
+.cg{display:grid;gap:24px}@media(min-width:860px){.cg{grid-template-columns:1fr 1fr}}
+.cl li{margin-bottom:20px}.cl a{color:var(--p)}.cl strong{display:block}
+.dark .cl a{color:#fff}
+.ban{background:var(--p);color:#fff;padding:32px 0;position:relative;overflow:hidden}
+.ban .c{display:grid;gap:16px;align-items:center}
+.ban h1{font-size:clamp(1.7rem,1.2rem + 2.4vw,2.6rem)}
+.crumb{font-size:.9rem;color:#cfd4f5;margin-bottom:8px}.crumb a{color:#fff}
+.ban .bi{display:none}
+@media(min-width:800px){.ban .c{grid-template-columns:1fr 300px}.ban .bi{display:block;border-radius:16px;overflow:hidden}}
+.split{display:grid;gap:24px;align-items:center}
+@media(min-width:860px){.split{grid-template-columns:1fr 1fr;gap:48px}}
+.prose p+p{margin-top:12px}.prose p{color:var(--mu)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{border:1.5px solid var(--ln);background:#fff;border-radius:999px;min-height:40px;padding:0 16px;font-weight:600;font-size:.95rem;font-family:inherit;cursor:pointer;color:var(--ink)}
+.chip.on{background:var(--p);border-color:var(--p);color:#fff}
+.msg{margin-top:12px;padding:12px 16px;border-radius:10px;background:#fff3d6;color:var(--warn);font-weight:600}
+.frm{display:grid;gap:14px;max-width:520px}
+.mapph{min-height:220px;border:2px dashed var(--ln);border-radius:var(--r);display:grid;place-items:center;text-align:center;padding:16px;color:var(--mu);background:var(--bg)}
+.avatar{width:88px;height:88px;border-radius:50%;background:var(--ps);display:grid;place-items:center;font-size:2.2rem}
+.stp{counter-reset:s}.stp li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--ln)}
+.stp li::before{counter-increment:s;content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--p);color:#fff;display:grid;place-items:center;font-weight:700}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+footer{background:var(--dk);color:#dfe3fa}
+.fg{display:grid;gap:28px;padding:40px 16px}@media(min-width:860px){.fg{grid-template-columns:1.2fr 1fr 1.4fr}}
+footer a{color:#fff;text-decoration:none}footer a:hover{text-decoration:underline}
+footer h2{font-size:1.05rem;color:#fff;margin-bottom:10px}footer li{margin-bottom:6px}
+.fb{border-top:1px solid rgba(255,255,255,.15);padding:14px 0;font-size:.9rem}
+.wa{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:#1fa855;color:#fff;display:grid;place-items:center;text-decoration:none;font-size:1.5rem;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:15}
+.note{background:#fff3d6;color:var(--warn);font-size:.85rem;text-align:center;padding:6px 12px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.cb{display:inline-block;padding:2px 10px;border-radius:999px;background:var(--as);color:var(--a);font-weight:600;font-size:.85rem}
+.card.imp{border-left:5px solid #b3261e}
+.card.aud{padding:28px}.audi{font-size:2rem;line-height:1}.audk{color:var(--a);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem}
+@media(min-width:760px){.card.sform.sfull{grid-template-columns:repeat(2,minmax(0,1fr))}.card.sform.sfull .btn{grid-column:1/-1}}
+</style>
+<style>
+/* ---- Membership portal (scoped copy of the uploaded prototype CSS) ---- */
+#portal{color-scheme:light;--bg:#f5f6fb;--sf:#fff;--tx:#161a33;--mu:#4a5070;--pr:#1e2a78;--pr2:#3b4bd8;--vi:#6b4fd8;--ln:#cdd2e6;--ok:#16794a;--wn:#a15c00;--er:#b3261e;box-sizing:border-box;}
+#portal *{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+#portal{margin:0;background:var(--bg);color:var(--tx);font:17px/1.55 Inter,"Noto Sans Malayalam","Noto Sans Tamil",system-ui,sans-serif}
+#portal .w{max-width:1040px;margin:0 auto;padding:0 18px}
+#portal header{background:var(--sf);border-bottom:1px solid var(--ln);position:sticky;top:0;z-index:5}
+#portal .bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0}
+#portal .logo{font-weight:700;font-size:20px;color:var(--pr);text-decoration:none;margin-right:auto}
+#portal nav{display:flex;gap:2px;flex-wrap:wrap}
+#portal nav a{padding:8px 11px;border-radius:10px;color:var(--tx);text-decoration:none;font-weight:600;font-size:15px}
+#portal nav a.on,#portal nav a:hover{background:var(--bg);color:var(--pr)}
+#portal select,#portal input,#portal textarea{font:inherit;padding:11px 12px;border:1px solid var(--ln);border-radius:10px;background:var(--sf);color:var(--tx);width:100%}
+#portal header select{width:auto;padding:7px}
+#portal .btn{display:inline-block;min-height:46px;padding:11px 20px;border-radius:12px;border:2px solid var(--pr);background:var(--pr);color:#fff;font:600 16px inherit;text-decoration:none;cursor:pointer;margin:4px 4px 4px 0}
+#portal .btn.ghost{background:transparent;color:var(--pr)}
+#portal .btn.sm{min-height:36px;padding:6px 14px;font-size:14px}
+#portal .btn.red{background:var(--er);border-color:var(--er)}
+#portal :focus-visible{outline:3px solid var(--pr2);outline-offset:2px}
+#portal .hero{background:linear-gradient(135deg,#141c5a,#2c3aa8 70%,#5a45c8);color:#fff;padding:56px 0}
+#portal .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px;max-width:640px}
+#portal .hero p{max-width:520px;opacity:.9}
+#portal .hero .btn{background:#fff;color:#1e2a78;border-color:#fff}
+#portal .hero .btn.ghost{background:transparent;color:#fff}
+#portal h2{font-size:24px;margin:32px 0 12px}
+#portal .g{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+#portal .c{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:18px}
+#portal .c h3{margin:0 0 6px;font-size:18px}
+#portal .c p{margin:0;color:var(--mu)}
+#portal .b{display:inline-block;padding:2px 10px;border-radius:99px;font-size:13px;font-weight:600;background:var(--bg);border:1px solid var(--ln)}
+#portal .b.active,#portal .b.p_ok{color:var(--ok)}
+#portal .b.due,#portal .b.pp,#portal .b.pl,#portal .b.pd,#portal .b.ps,#portal .b.p_sub,#portal .b.p_pending{color:var(--wn)}
+#portal .b.expired,#portal .b.rej{color:var(--er)}
+#portal .f label{display:block;font-weight:600;margin:12px 0 4px}
+#portal .er{color:var(--er);font-size:14px;min-height:18px}
+#portal .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#portal .row>*{flex:0 0 auto}
+#portal .imp{border-left:5px solid var(--er)}
+#portal table{width:100%;border-collapse:collapse;background:var(--sf);border-radius:12px;overflow:hidden}
+#portal th,#portal td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--ln);font-size:15px;vertical-align:top}
+#portal .sc{overflow-x:auto}
+#portal .card3{position:relative;overflow:hidden;max-width:420px;border-radius:20px;padding:22px;color:#fff;background:linear-gradient(135deg,#141c5a,#3b4bd8 75%,#6b4fd8);box-shadow:0 8px 24px rgba(20,28,90,.3)}
+#portal .card3 h2{margin:14px 0 2px}
+#portal .card3 .q{width:64px;height:64px;border:2px dashed #fff8;border-radius:8px;font-size:11px;display:grid;place-items:center;text-align:center;float:right}
+#portal .card3.expired{filter:grayscale(.7)}
+#portal .card3.expired:after{content:"EXPIRED";position:absolute;top:44%;left:10%;font:700 54px Inter;color:#ff6b6b;opacity:.75;transform:rotate(-14deg);border:4px solid #ff6b6b;padding:0 10px}
+#portal .ph{float:left;width:84px;height:104px;border-radius:12px;object-fit:cover;background:#ffffff30;border:2px solid #fff8;margin-right:14px;display:grid;place-items:center;font:700 34px Inter}
+#portal .pv{width:96px;height:120px;object-fit:cover;border-radius:12px;border:1px solid var(--ln);background:var(--bg);display:grid;place-items:center;color:var(--mu);font-size:12px}
+#portal .two{display:grid;gap:0 14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+#portal .f h3{margin:22px 0 0;color:var(--pr)}
+#portal .trk{display:flex;gap:6px;flex-wrap:wrap}
+#portal .trk .s{flex:1 1 90px;text-align:center;font-size:13px;color:var(--mu)}
+#portal .trk i{display:grid;place-items:center;width:32px;height:32px;margin:0 auto 4px;border-radius:50%;border:2px solid var(--ln);font-style:normal;font-weight:700}
+#portal .trk .dn i{background:var(--ok);border-color:var(--ok);color:#fff}
+#portal .trk .cu i{border-color:var(--pr2);color:var(--pr2)}
+#portal .trk .cu{color:var(--tx);font-weight:600}
+#portal .lnk{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--pr);text-decoration:underline;cursor:pointer;text-align:left}
+#portal .mod{position:fixed;inset:0;background:#0009;display:grid;place-items:center;z-index:20;padding:16px}
+#portal .mod .c{max-width:460px;width:100%;max-height:90vh;overflow:auto}
+#portal .ban{padding:12px 16px;border-radius:12px;background:#fff3d6;color:#5a3a00;margin:12px 0}
+#portal .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--pr);color:#fff;padding:12px 20px;border-radius:12px;z-index:9}
+#portal footer{margin-top:48px;background:var(--pr);color:#fff;padding:24px 0;font-size:15px}
+#portal .demo{font-size:13px;color:var(--mu)}
+#portal .row>*{flex:0 1 auto;min-width:0}
+#portal .c,#portal td,#portal th{overflow-wrap:break-word}
+#portal .mbtn{display:none;min-height:44px;min-width:44px;border:1px solid var(--ln);background:var(--sf);color:var(--pr);border-radius:10px;font-size:22px;cursor:pointer}
+@media(min-width:701px) and (max-width:1100px){#portal .g{grid-template-columns:repeat(2,1fr)}
+#portal .w{padding:0 24px}}
+@media(max-width:900px){#portal .bar{gap:8px}
+#portal .mbtn{display:inline-flex;align-items:center;justify-content:center;order:2}
+#portal header select{order:1;min-height:44px}
+#portal #pnav{display:none;order:3;flex-basis:100%;flex-direction:column;padding:4px 0 8px}
+#portal #pnav.open{display:flex}
+#portal #pnav a{padding:13px 12px;font-size:17px;border-bottom:1px solid var(--ln);border-radius:0}}
+@media(max-width:700px){#portal{font-size:16px}
+#portal .w{padding:0 14px}
+#portal .hero{padding:34px 0}
+#portal h2{font-size:21px;margin:24px 0 10px}
+#portal .btn{min-height:48px;padding:12px 18px}
+#portal .btn.sm{min-height:44px;padding:8px 16px;font-size:15px}
+#portal .card3{padding:16px}
+#portal .card3.expired:after{font-size:34px}
+#portal .ph{width:70px;height:88px}
+#portal table{display:block;overflow-x:auto}
+#portal th,#portal td{padding:9px 10px;font-size:14px;min-width:84px}
+#portal .trk .s{flex-basis:70px;font-size:12px}
+#portal .two{grid-template-columns:1fr}
+#portal .pgr{grid-template-columns:repeat(2,1fr)}
+#portal .mod{padding:10px}
+#portal .toast{width:calc(100% - 28px);text-align:center}}
+@media(max-width:420px){#portal .pgr,#portal .g{grid-template-columns:1fr}
+#portal .hero .btn{width:100%;text-align:center;margin-right:0}}
+@media print{header,footer,.np{display:none!important}body.pcards #papp{display:none!important}body.pcards .mod{position:static!important;background:none!important;display:block!important;padding:0}body.pcards .mod .c{max-height:none!important;overflow:visible!important;border:0;box-shadow:none}body.pcards .card3{page-break-inside:avoid;margin:10px 0}}
+#portal .pvb{margin:4px 0 0}
+#portal .pgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+#portal .pcd{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.14)}
+#portal .pcd img,#portal .ph0{width:100%;height:130px;object-fit:cover;display:block}
+#portal .ph0{background:linear-gradient(135deg,#1f6b44,#8fbf6a)}
+#portal .pcd h3{margin:8px 10px;font-size:15px}
+#portal{min-height:60vh;padding-bottom:48px}
+#portal .c{margin:0}
+#portal p{margin:1em 0}
+#portal .c p{margin:0}
+.pbar{background:#fff;border-bottom:1px solid var(--ln)}
+.pbarin{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+#portal .ban{margin:12px 0}
+#portal .mst{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid var(--ln);background:#fff}
+#portal .mst.fwd{background:#e5f4ec;color:#17794a;border-color:transparent}
+#portal .mst.opened{background:#eceffc;color:#1e2a78;border-color:transparent}
+#portal .mst.new{background:#fff3d6;color:#8f5200;border-color:transparent}
+#portal .mst.not{background:#f1f2f7;color:#454b6b}
+#portal .mst.over{background:#fdeceb;color:#b3261e;border-color:transparent}
+#portal label.ck{display:flex;gap:8px;align-items:center;font-weight:400;margin:8px 0}
+#portal .mtw{overflow-x:auto}
+#portal table.mt{display:table;width:100%;margin:8px 0}
+#portal tr.mdr td{background:#f6f7fb}
+#portal pre.mb{white-space:pre-wrap;font:inherit;margin:8px 0;overflow-wrap:anywhere}
+@media print{.pbar,.note,.wa,.topbar{display:none!important}}
+
+</style>
+</head>
+<body>
+<div class="note">Demo · sample data and simulated payments only. “Placeholder” and “Demo” tags mark sample content. Illustrations are temporary.</div>
+<header>
+ <div class="topbar"><div class="c"><select id="lang2" aria-label="Language"><option value="en">English</option><option value="ml">മലയാളം</option><option value="ta">தமிழ்</option></select><a class="btn s sm" href="#/p/register" id="joinBtn2"></a><a class="btn sm" href="#/p/login" id="loginBtn2"></a></div></div>
+ <div class="c bar">
+  <a class="logo" href="#/"><span class="mark" aria-hidden="true">♻</span><span id="brand"></span></a>
+  <nav class="nav" aria-label="Main navigation" id="nav"></nav>
+  <div class="act">
+   <select id="lang" aria-label="Language"><option value="en">English</option><option value="ml">മലയാളം</option><option value="ta">தமிழ்</option></select>
+   <a class="btn s login" href="#/p/login" id="loginBtn"></a>
+   <button class="burger" id="bg" aria-expanded="false" aria-controls="menu" aria-label="Menu">☰</button>
+  </div>
+ </div>
+ <div id="menu"></div>
+</header>
+<main id="app" tabindex="-1"></main>
+<div id="portal" hidden>
+ <div class="pbar" id="pbar" hidden><div class="w pbarin"><nav id="pnav" aria-label="Member portal"></nav><button id="mb" class="mbtn" aria-label="Menu" aria-expanded="false" onclick="mbt()">☰</button></div></div>
+ <div class="w"><div class="ban np" id="pdemo"></div></div>
+ <main class="w" id="papp" tabindex="-1" style="min-height:50vh"></main>
+</div>
+<footer>
+ <div class="c fg" id="foot"></div>
+ <div class="fb"><div class="c">© <span id="yr"></span> <span id="brand2"></span> · Kerala Scrap Merchants Association (KSMA) <button id="inst" class="btn s sm" style="margin-left:12px" hidden>Install app</button><span id="iosTip" hidden> · iPhone: tap Share, then “Add to Home Screen”.</span></div></div>
+</footer>
+<a class="wa" href="https://wa.me/919656884000" aria-label="WhatsApp" rel="noopener">✆</a>
+
+<script>
+
+const T={
+home:['Home','ഹോം','முகப்பு'],about:['About Us','ഞങ്ങളെക്കുറിച്ച്','எங்களைப் பற்றி'],acts:['Activities','പ്രവർത്തനങ്ങൾ','செயல்பாடுகள்'],mem:['Membership','അംഗത്വം','உறுப்பினர்'],notices:['Notices','അറിയിപ്പുകൾ','அறிவிப்புகள்'],contact:['Contact','ബന്ധപ്പെടുക','தொடர்பு'],
+addm:['Add new member','പുതിയ അംഗത്തെ ചേർക്കുക','புதிய உறுப்பினரைச் சேர்'],join:['Join as a Member','അംഗമായി ചേരുക','உறுப்பினராகச் சேருங்கள்'],login:['Member Login','അംഗ ലോഗിൻ','உறுப்பினர் உள்நுழைவு'],logout:['Log out','പുറത്തുകടക്കുക','வெளியேறு'],
+hero:['Kerala’s scrap merchants, together','കേരളത്തിലെ ആക്രി വ്യാപാരികളുടെ കൂട്ടായ്മ','கேரளாவின் பழைய இரும்பு வணிகர்களின் கூட்டமைப்பு'],
+heroSub:['One organization for fair trade, recognition and support.','ന്യായമായ വ്യാപാരത്തിനും അംഗീകാരത്തിനും ഒരു സംഘടന.','நியாயமான வணிகத்திற்கும் அங்கீகாரத்திற்கும் ஒரு அமைப்பு.'],
+benefits:['Membership benefits','അംഗത്വ ആനുകൂല്യങ്ങൾ','உறுப்பினர் நன்மைகள்'],latest:['Latest notices','പുതിയ അറിയിപ്പുകൾ','சமீபத்திய அறிவிப்புகள்'],
+b1:['Official member card','ഔദ്യോഗിക അംഗത്വ കാർഡ്','அதிகாரப்பூர்வ அட்டை'],b2:['Local committee support','ലോക്കൽ കമ്മിറ്റി സഹായം','உள்ளூர் குழு உதவி'],b3:['Timely notices','സമയബന്ധിത അറിയിപ്പുകൾ','உடனடி அறிவிப்புகள்'],
+ph:['Placeholder content – replace with official text','താൽക്കാലിക ഉള്ളടക്കം – ഔദ്യോഗിക വാചകം ചേർക്കുക','தற்காலிக உள்ளடக்கம் – அதிகாரப்பூர்வ உரையைச் சேர்க்கவும்'],
+dash:['Dashboard','ഡാഷ്ബോർഡ്','முகப்புப் பக்கம்'],profile:['Profile','പ്രൊഫൈൽ','சுயவிவரம்'],card:['Membership card','അംഗത്വ കാർഡ്','உறுப்பினர் அட்டை'],pay:['Payments','പേയ്മെന്റ്','கட்டணம்'],notif:['My alerts','എന്റെ അലേർട്ടുകൾ','என் எச்சரிக்கைகள்'],
+apps:['Applications','അപേക്ഷകൾ','விண்ணப்பங்கள்'],members:['Members','അംഗങ്ങൾ','உறுப்பினர்கள்'],reports:['Reports','റിപ്പോർട്ടുകൾ','அறிக்கைகள்'],admin:['Admin','അഡ്മിൻ','நிர்வாகம்'],
+status:['Status','നില','நிலை'],number:['Member no.','അംഗത്വ നമ്പർ','உறுப்பினர் எண்'],valid:['Valid until','കാലാവധി','செல்லுபடி'],renew:['Renew now','ഇപ്പോൾ പുതുക്കുക','இப்போது புதுப்பி'],paynow:['Pay now (simulated)','അടയ്ക്കുക (സിമുലേഷൻ)','செலுத்து (மாதிரி)'],
+name:['Full name','പൂർണ്ണ പേര്','முழு பெயர்'],mobile:['Mobile number','മൊബൈൽ നമ്പർ','மொபைல் எண்'],password:['Password','പാസ്‌വേഡ്','கடவுச்சொல்'],biz:['Shop / business name','സ്ഥാപനത്തിന്റെ പേര്','நிறுவனத்தின் பெயர்'],area:['Local area','പ്രദേശം','பகுதி'],dist:['District','ജില്ല','மாவட்டம்'],
+submit:['Submit application','അപേക്ഷ സമർപ്പിക്കുക','விண்ணப்பத்தைச் சமர்ப்பி'],approve:['Approve','അംഗീകരിക്കുക','ஒப்புதல்'],reject:['Reject','നിരസിക്കുക','நிராகரி'],verify:['Verify payment','പേയ്മെന്റ് സ്ഥിരീകരിക്കുക','கட்டணத்தை உறுதிசெய்'],
+install:['Install app','ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യുക','செயலியை நிறுவு'],print:['Print / save as PDF','പ്രിന്റ് / PDF','அச்சிடு / PDF'],back:['Back to dashboard','ഡാഷ്ബോർഡിലേക്ക്','முகப்புப் பக்கத்திற்கு'],search:['Search','തിരയുക','தேடு'],all:['All','എല്ലാം','அனைத்தும்'],
+apply:['Apply for Membership','അംഗത്വത്തിന് അപേക്ഷിക്കുക','உறுப்பினராக விண்ணப்பிக்க'],demo:['DEMO SAMPLE','ഡെമോ','மாதிரி'],send:['Send message','സന്ദേശം അയയ്ക്കുക','செய்தி அனுப்பு'],none:['Nothing here yet.','ഒന്നുമില്ല.','எதுவும் இல்லை.'],
+s_active:['Membership Active','സജീവം','செயலில்'],s_due:['Due (Unpaid)','കുടിശ്ശിക','நிலுவை'],s_expired:['Expired','കാലഹരണപ്പെട്ടു','காலாவதி'],s_pl:['Pending Local Approval','ലോക്കൽ അനുമതി കാത്തിരിക്കുന്നു','உள்ளூர் ஒப்புதல் நிலுவை'],s_pd:['Pending District Approval','ജില്ലാ അനുമതി കാത്തിരിക്കുന്നു','மாவட்ட ஒப்புதல் நிலுவை'],s_ps:['Pending State Approval','സംസ്ഥാന അനുമതി കാത്തിരിക്കുന്നു','மாநில ஒப்புதல் நிலுவை'],s_rej:['Rejected','നിരസിച്ചു','நிராகரிக்கப்பட்டது'],
+p_pending:['Payment pending','അടയ്ക്കാനുണ്ട്','செலுத்த வேண்டும்'],p_sub:['Submitted for verification','പരിശോധനയ്ക്ക് സമർപ്പിച്ചു','சரிபார்ப்பிற்கு அனுப்பப்பட்டது'],p_ok:['Payment successful','പേയ്മെന്റ് വിജയകരം','கட்டணம் வெற்றி'],
+n_ok:['Your membership is approved.','നിങ്ങളുടെ അംഗത്വം അംഗീകരിച്ചു.','உங்கள் உறுப்பினர் ஒப்புதல் பெற்றது.'],n_sub:['Payment submitted for verification.','പേയ്മെന്റ് പരിശോധനയ്ക്ക് സമർപ്പിച്ചു.','கட்டணம் சரிபார்ப்பிற்கு அனுப்பப்பட்டது.'],n_pay:['Payment verified. Membership renewed.','പേയ്മെന്റ് സ്ഥിരീകരിച്ചു. അംഗത്വം പുതുക്കി.','கட்டணம் சரிபார்க்கப்பட்டது. புதுப்பிக்கப்பட்டது.'],n_due:['Your renewal is due soon.','പുതുക്കൽ ഉടൻ വേണം.','புதுப்பித்தல் விரைவில் தேவை.'],
+dob:['Date of birth (optional)','ജനനത്തീയതി (ഓപ്ഷണൽ)','பிறந்த தேதி (விருப்பம்)'],addr:['Home address','വീട്ടുവിലാസം','வீட்டு முகவரி'],baddr:['Business address','സ്ഥാപനത്തിന്റെ വിലാസം','நிறுவன முகவரி'],photo:['Profile photo (shown on your card)','ഫോട്ടോ (കാർഡിൽ കാണിക്കും)','புகைப்படம் (அட்டையில் இடம்பெறும்)'],upl:['Upload photo','ഫോട്ടോ അപ്‌ലോഡ്','புகைப்படம் பதிவேற்று'],cam:['Take photo','ഫോട്ടോ എടുക്കുക','புகைப்படம் எடு'],idp:['ID proof (optional)','തിരിച്ചറിയൽ രേഖ (ഓപ്ഷണൽ)','அடையாள ஆவணம் (விருப்பம்)'],plang:['Preferred language','ഇഷ്ടഭാഷ','விருப்ப மொழி'],decl:['I confirm the information is correct.','വിവരങ്ങൾ ശരിയാണെന്ന് ഞാൻ സ്ഥിരീകരിക്കുന്നു.','தகவல்கள் சரியானவை என உறுதிசெய்கிறேன்.'],sec1:['Personal details','വ്യക്തിഗത വിവരങ്ങൾ','தனிப்பட்ட விவரங்கள்'],sec2:['Business details','സ്ഥാപന വിവരങ്ങൾ','நிறுவன விவரங்கள்'],feeNote:['No payment is needed to apply. The fee can be paid online or offline after submission.','അപേക്ഷിക്കാൻ പണം അടയ്ക്കേണ്ടതില്ല. ഫീസ് പിന്നീട് ഓൺലൈനായോ ഓഫ്‌ലൈനായോ അടയ്ക്കാം.','விண்ணப்பிக்க கட்டணம் தேவையில்லை. கட்டணத்தை பின்னர் ஆன்லைன் அல்லது நேரடியாகச் செலுத்தலாம்.'],
+title:['Aakrikada.in – Scrap Merchants’ Organization, Kerala (Prototype)','Aakrikada.in – കേരള ആക്രി വ്യാപാരികളുടെ സംഘടന (പ്രോട്ടോടൈപ്പ്)','Aakrikada.in – கேரளப் பழைய இரும்பு வணிகர் அமைப்பு (முன்மாதிரி)'],foot:['Prototype – sample data and simulated payments only.','പ്രോട്ടോടൈപ്പ് – സാമ്പിൾ ഡാറ്റയും സിമുലേറ്റഡ് പേയ്മെന്റും മാത്രം.','முன்மாதிரி – மாதிரி தரவும் மாதிரி கட்டணமும் மட்டும்.'],
+abM:['Mission','ദൗത്യം','நோக்கம்'],abV:['Vision','കാഴ്ചപ്പാട്','தொலைநோக்கு'],abC:['Committees','കമ്മിറ്റികൾ','குழுக்கள்'],
+abM2:['Fair, safe and recognised scrap trade for every member.','ഓരോ അംഗത്തിനും ന്യായവും സുരക്ഷിതവും അംഗീകൃതവുമായ ആക്രി വ്യാപാരം.','ஒவ்வொரு உறுப்பினருக்கும் நியாயமான, பாதுகாப்பான, அங்கீகரிக்கப்பட்ட பழைய இரும்பு வணிகம்.'],abV2:['A united merchant community across Kerala.','കേരളത്തിലുടനീളം ഒന്നായ വ്യാപാരി സമൂഹം.','கேரளா முழுவதும் ஒன்றுபட்ட வணிகர் சமூகம்.'],abC2:['Local → District → State','ലോക്കൽ → ജില്ല → സംസ്ഥാനം','உள்ளூர் → மாவட்டம் → மாநிலம்'],
+a1:['Monthly meetings','പ്രതിമാസ യോഗങ്ങൾ','மாதாந்திரக் கூட்டங்கள்'],a2:['Awareness campaigns','ബോധവൽക്കരണ പരിപാടികൾ','விழிப்புணர்வு பிரச்சாரங்கள்'],a3:['Member welfare programs','അംഗക്ഷേമ പദ്ധതികൾ','உறுப்பினர் நலத் திட்டங்கள்'],a4:['Recycling & sustainability drives','പുനരുപയോഗ, സുസ്ഥിരത പ്രചാരണങ്ങൾ','மறுசுழற்சி, நிலைத்தன்மை இயக்கங்கள்'],sample:['Sample','സാമ്പിൾ','மாதிரி'],
+how:['How it works','എങ്ങനെ പ്രവർത്തിക്കുന്നു','எப்படி செயல்படுகிறது'],how2:['Apply → Local → District → State approval → Active. Renewal every 2 years.','അപേക്ഷ → ലോക്കൽ → ജില്ല → സംസ്ഥാന അനുമതി → സജീവം. രണ്ട് വർഷത്തിലൊരിക്കൽ പുതുക്കണം.','விண்ணப்பம் → உள்ளூர் → மாவட்டம் → மாநில ஒப்புதல் → செயலில். இரண்டு ஆண்டுகளுக்கு ஒரு முறை புதுப்பிக்கவும்.'],mfee:['Membership fee: ₹1000, renewed every 2 years.','അംഗത്വ ഫീസ്: ₹1000, രണ്ട് വർഷത്തിലൊരിക്കൽ പുതുക്കണം.','உறுப்பினர் கட்டணம்: ₹1000, இரண்டு ஆண்டுகளுக்கு ஒரு முறை புதுப்பிக்கவும்.'],
+msg:['Message','സന്ദേശം','செய்தி'],kerala:['Kerala, India','കേരളം, ഇന്ത്യ','கேரளா, இந்தியா'],t_msg:['Message simulated – not sent','സന്ദേശം അയച്ചിട്ടില്ല (സിമുലേഷൻ)','செய்தி அனுப்பப்படவில்லை (மாதிரி)'],
+assisted:['Assisted registration','സഹായത്തോടെയുള്ള രജിസ്ട്രേഷൻ','உதவியுடன் பதிவு'],phLbl:['Photo','ഫോട്ടോ','புகைப்படம்'],demoDist:['Demo: choose Kottayam and Pala to see the application in the Local Committee queue.','ഡെമോ: ലോക്കൽ കമ്മിറ്റി ലിസ്റ്റിൽ കാണാൻ കോട്ടയം, പാലാ തിരഞ്ഞെടുക്കുക.','மாதிரி: உள்ளூர் குழு பட்டியலில் காண கோட்டயம், பாலா தேர்வு செய்யவும்.'],
+e_n:['Enter full name','പൂർണ്ണ പേര് നൽകുക','முழு பெயரை உள்ளிடவும்'],e_m:['Enter a 10-digit mobile number','10 അക്ക മൊബൈൽ നമ്പർ നൽകുക','10 இலக்க மொபைல் எண்ணை உள்ளிடவும்'],e_dup:['This mobile number is already registered. Contact your Local Committee.','ഈ മൊബൈൽ നമ്പർ ഇതിനകം രജിസ്റ്റർ ചെയ്തിട്ടുണ്ട്. ലോക്കൽ കമ്മിറ്റിയെ ബന്ധപ്പെടുക.','இந்த மொபைல் எண் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது. உள்ளூர் குழுவைத் தொடர்பு கொள்ளவும்.'],e_ad:['Enter home address','വീട്ടുവിലാസം നൽകുക','வீட்டு முகவரியை உள்ளிடவும்'],e_p:['Add a clear photo of your face','മുഖം വ്യക്തമായ ഫോട്ടോ ചേർക്കുക','முகம் தெளிவாகத் தெரியும் புகைப்படத்தைச் சேர்க்கவும்'],e_b:['Enter shop name','സ്ഥാപനത്തിന്റെ പേര് നൽകുക','நிறுவனத்தின் பெயரை உள்ளிடவும்'],e_ba:['Enter business address','സ്ഥാപനത്തിന്റെ വിലാസം നൽകുക','நிறுவன முகவரியை உள்ளிடவும்'],e_dc:['Please confirm to continue','തുടരാൻ സ്ഥിരീകരിക്കുക','தொடர உறுதிசெய்யவும்'],ref:['Reference','റഫറൻസ്','குறிப்பு எண்'],
+e_login:['Mobile number or password is incorrect.','മൊബൈൽ നമ്പറോ പാസ്‌വേഡോ തെറ്റാണ്.','மொபைல் எண் அல்லது கடவுச்சொல் தவறு.'],demoAcc:['Demo accounts','ഡെമോ അക്കൗണ്ടുകൾ','மாதிரி கணக்குகள்'],r_local:['Local','ലോക്കൽ','உள்ளூர்'],r_district:['District','ജില്ല','மாவட்டம்'],r_state:['State','സംസ്ഥാനം','மாநிலம்'],r_admin:['System Admin','സിസ്റ്റം അഡ്മിൻ','கணினி நிர்வாகி'],
+samp:['valid for 2 years','2 വർഷത്തേക്ക് സാധുത','2 ஆண்டுகள் செல்லுபடி'],refL:['Ref','റഫ.','குறிப்பு'],payNote:['Simulated. The live system verifies every payment on the server.','സിമുലേഷൻ മാത്രം. യഥാർത്ഥ സംവിധാനത്തിൽ ഓരോ പേയ്മെന്റും സെർവറിൽ പരിശോധിക്കും.','மாதிரி மட்டும். உண்மையான அமைப்பில் ஒவ்வொரு கட்டணமும் சர்வரில் சரிபார்க்கப்படும்.'],
+det:['Details & history','വിവരങ്ങളും ചരിത്രവും','விவரங்களும் வரலாறும்'],dobS:['Date of birth','ജനനത്തീയതി','பிறந்த தேதி'],idpS:['ID proof','തിരിച്ചറിയൽ രേഖ','அடையாள ஆவணம்'],
+coll:['Fees collected (₹)','പിരിഞ്ഞ ഫീസ് (₹)','வசூலான கட்டணம் (₹)'],audit:['Audit log','ഓഡിറ്റ് ലോഗ്','தணிக்கைப் பதிவு'],csvB:['Export CSV','CSV എക്സ്പോർട്ട്','CSV ஏற்றுமதி'],feeL:['Membership fee (₹) – valid for 2 years','അംഗത്വ ഫീസ് (₹) – 2 വർഷത്തേക്ക്','உறுப்பினர் கட்டணம் (₹) – 2 ஆண்டுகள்'],accts:['Accounts','അക്കൗണ്ടുകൾ','கணக்குகள்'],
+t_ok:['Done','ചെയ്തു','முடிந்தது'],t_ver:['Payment verified','പേയ്മെന്റ് സ്ഥിരീകരിച്ചു','கட்டணம் உறுதிசெய்யப்பட்டது'],t_saved:['Saved','സേവ് ചെയ്തു','சேமிக்கப்பட்டது'],t_psim:['Simulated payment submitted','സിമുലേറ്റഡ് പേയ്മെന്റ് സമർപ്പിച്ചു','மாதிரி கட்டணம் சமர்ப்பிக்கப்பட்டது'],
+instMsg:['Install is not available in this preview. In the live app, use the Install button or your browser menu (Add to Home Screen).','ഈ പ്രിവ്യൂവിൽ ഇൻസ്റ്റാൾ ലഭ്യമല്ല. യഥാർത്ഥ ആപ്പിൽ ഇൻസ്റ്റാൾ ബട്ടണോ ബ്രൗസർ മെനുവിലെ ഹോം സ്ക്രീനിൽ ചേർക്കുക എന്നതോ ഉപയോഗിക്കുക.','இந்த முன்னோட்டத்தில் நிறுவ இயலாது. உண்மையான செயலியில் நிறுவு பொத்தானை அல்லது உலாவி மெனுவில் முகப்புத் திரையில் சேர் என்பதைப் பயன்படுத்தவும்.'],
+c_Meetings:['Meetings','യോഗങ്ങൾ','கூட்டங்கள்'],c_Campaigns:['Campaigns','പ്രചാരണങ്ങൾ','பிரச்சாரங்கள்'],c_Internal:['Internal','ആഭ്യന്തരം','உள்நிலை'],
+nt1:['Annual general meeting','വാർഷിക പൊതുയോഗം','ஆண்டுப் பொதுக்கூட்டம்'],ns1:['Date and venue to be confirmed by the committee.','തീയതിയും സ്ഥലവും കമ്മിറ്റി അറിയിക്കും.','தேதியும் இடமும் குழு அறிவிக்கும்.'],nt2:['Awareness drive: safe scrap handling','ബോധവൽക്കരണം: ആക്രി സുരക്ഷിതമായി കൈകാര്യം ചെയ്യൽ','விழிப்புணர்வு: பழைய பொருட்களைப் பாதுகாப்பாகக் கையாளுதல்'],ns2:['Sample notice – replace with official text.','സാമ്പിൾ അറിയിപ്പ് – ഔദ്യോഗിക വാചകം ചേർക്കുക.','மாதிரி அறிவிப்பு – அதிகாரப்பூர்வ உரையைச் சேர்க்கவும்.'],nt3:['Committee budget review','കമ്മിറ്റി ബജറ്റ് അവലോകനം','குழு வரவு செலவு மதிப்பாய்வு'],ns3:['Internal committee notice (not public).','ആഭ്യന്തര കമ്മിറ്റി അറിയിപ്പ് (പൊതുവല്ല).','உள்நிலைக் குழு அறிவிப்பு (பொதுவானதல்ல).'],
+h_Submitted:['Submitted','സമർപ്പിച്ചു','சமர்ப்பிக்கப்பட்டது'],'h_Local approved':['Local approved','ലോക്കൽ അംഗീകരിച്ചു','உள்ளூர் ஒப்புதல்'],'h_District approved':['District approved','ജില്ല അംഗീകരിച്ചു','மாவட்ட ஒப்புதல்'],'h_State approved':['State approved','സംസ്ഥാനം അംഗീകരിച്ചു','மாநில ஒப்புதல்'],h_Approved:['Approved','അംഗീകരിച്ചു','ஒப்புதல் பெற்றது'],h_Rejected:['Rejected','നിരസിച്ചു','நிராகரிக்கப்பட்டது'],h_Assisted:['Assisted registration','സഹായത്തോടെ','உதவியுடன்'],
+nf_title:['Publish a notice','അറിയിപ്പ് പ്രസിദ്ധീകരിക്കുക','அறிவிப்பை வெளியிடு'],ntl:['Title','തലക്കെട്ട്','தலைப்பு'],nsum:['Summary','സംഗ്രഹം','சுருக்கம்'],ncat:['Category','വിഭാഗം','பிரிவு'],naud:['Show to','ആർക്ക് കാണിക്കണം','யாருக்குக் காட்ட'],nimp:['Mark as important','പ്രധാനമെന്ന് അടയാളപ്പെടുത്തുക','முக்கியம் எனக் குறி'],npub:['Publish notice','അറിയിപ്പ് പ്രസിദ്ധീകരിക്കുക','அறிவிப்பை வெளியிடு'],e_nt:['Enter a title','തലക്കെട്ട് നൽകുക','தலைப்பை உள்ளிடவும்'],t_pub:['Notice published','അറിയിപ്പ് പ്രസിദ്ധീകരിച്ചു','அறிவிப்பு வெளியிடப்பட்டது'],n_new:['A new notice has been published.','പുതിയ അറിയിപ്പ് പ്രസിദ്ധീകരിച്ചു.','புதிய அறிவிப்பு வெளியிடப்பட்டுள்ளது.'],c_General:['General','പൊതുവായത്','பொது'],aud_public:['Public (website and members)','പൊതു (വെബ്സൈറ്റും അംഗങ്ങളും)','பொது (இணையதளம் & உறுப்பினர்கள்)'],aud_members:['Members only','അംഗങ്ങൾക്ക് മാത്രം','உறுப்பினர்களுக்கு மட்டும்'],aud_committee:['Committee only','കമ്മിറ്റിക്ക് മാത്രം','குழுவுக்கு மட்டும்'],
+idReq:['Ask for ID proof at registration','രജിസ്ട്രേഷനിൽ തിരിച്ചറിയൽ രേഖ ചോദിക്കുക','பதிவின் போது அடையாள ஆவணம் கேட்கவும்'],imp:['Import existing members (CSV from Google Sheet)','നിലവിലെ അംഗങ്ങളെ ഇറക്കുമതി ചെയ്യുക (Google Sheet CSV)','ஏற்கனவே உள்ள உறுப்பினர்களை இறக்குமதி செய் (Google Sheet CSV)'],impH:['Columns: name, mobile, biz, area, dist, valid_until (YYYY-MM-DD)','നിരകൾ: name, mobile, biz, area, dist, valid_until (YYYY-MM-DD)','நெடுவரிசைகள்: name, mobile, biz, area, dist, valid_until (YYYY-MM-DD)'],impOk:['imported','ഇറക്കുമതി ചെയ്തു','இறக்குமதி செய்யப்பட்டன'],impSkip:['skipped (duplicate or invalid)','ഒഴിവാക്കി (ഡ്യൂപ്ലിക്കേറ്റ് / തെറ്റ്)','தவிர்க்கப்பட்டன (நகல் / தவறு)'],h_Imported:['Imported','ഇറക്കുമതി ചെയ്തത്','இறக்குமதி செய்யப்பட்டது'],
+s_pp:['Approved – Fee Payment Pending','അംഗീകരിച്ചു – ഫീസ് അടയ്ക്കണം','ஒப்புதல் – கட்டணம் செலுத்த வேண்டும்'],track:['Track your application','അപേക്ഷയുടെ നില അറിയുക','விண்ணப்ப நிலையைக் கண்காணிக்கவும்'],tk0:['Submitted','സമർപ്പിച്ചു','சமர்ப்பிப்பு'],tk1:['Local','ലോക്കൽ','உள்ளூர்'],tk2:['District','ജില്ല','மாவட்டம்'],tk3:['State','സംസ്ഥാനം','மாநிலம்'],tk4:['Fee payment','ഫീസ് അടയ്ക്കൽ','கட்டணம்'],tk5:['Active','സജീവം','செயலில்'],
+c_pp:['Pay the membership fee to receive your card.','കാർഡ് ലഭിക്കാൻ അംഗത്വ ഫീസ് അടയ്ക്കുക.','அட்டை பெற உறுப்பினர் கட்டணத்தைச் செலுத்தவும்.'],c_exp:['Membership fee is due. Pay to get your card back.','അംഗത്വ ഫീസ് കുടിശ്ശികയാണ്. കാർഡ് തിരികെ ലഭിക്കാൻ അടയ്ക്കുക.','கட்டணம் நிலுவை. அட்டையைத் திரும்பப் பெற செலுத்தவும்.'],c_wait:['Your card will be available after approval and payment.','അംഗീകാരവും പേയ്മെന്റും കഴിഞ്ഞാൽ കാർഡ് ലഭ്യമാകും.','ஒப்புதல் மற்றும் கட்டணத்திற்குப் பிறகு அட்டை கிடைக்கும்.'],
+n_loc:['Your application passed Local Committee approval.','നിങ്ങളുടെ അപേക്ഷ ലോക്കൽ കമ്മിറ്റി അംഗീകരിച്ചു.','உங்கள் விண்ணப்பம் உள்ளூர் குழுவால் ஒப்புதல் பெற்றது.'],n_dis:['District Committee approved your application.','ജില്ലാ കമ്മിറ്റി അപേക്ഷ അംഗീകരിച്ചു.','மாவட்டக் குழு உங்கள் விண்ணப்பத்தை ஒப்புக்கொண்டது.'],n_ppd:['Approved! Please pay the membership fee to receive your card.','അംഗീകരിച്ചു! കാർഡ് ലഭിക്കാൻ അംഗത്വ ഫീസ് അടയ്ക്കുക.','ஒப்புதல்! அட்டை பெற உறுப்பினர் கட்டணத்தைச் செலுத்தவும்.'],n_rej:['Your application was not approved. Contact your Local Committee.','നിങ്ങളുടെ അപേക്ഷ അംഗീകരിച്ചില്ല. ലോക്കൽ കമ്മിറ്റിയെ ബന്ധപ്പെടുക.','உங்கள் விண்ணப்பம் ஏற்கப்படவில்லை. உள்ளூர் குழுவைத் தொடர்பு கொள்ளவும்.'],n_card:['Payment verified. Your membership card is ready.','പേയ്മെന്റ് സ്ഥിരീകരിച്ചു. അംഗത്വ കാർഡ് തയ്യാറാണ്.','கட்டணம் சரிபார்க்கப்பட்டது. உங்கள் அட்டை தயார்.'],n_exp:['Your membership fee is Due. Pay it to get your card back.','അംഗത്വ ഫീസ് കുടിശ്ശികയാണ്. കാർഡ് തിരികെ ലഭിക്കാൻ അടയ്ക്കുക.','உறுப்பினர் கட்டணம் நிலுவையில் உள்ளது. அட்டையைத் திரும்பப் பெற செலுத்தவும்.'],
+e_pw:['Password must be at least 6 characters','പാസ്‌വേഡ് കുറഞ്ഞത് 6 അക്ഷരം വേണം','கடவுச்சொல் குறைந்தது 6 எழுத்துகள் வேண்டும்'],trackNote:['Log in with your mobile number and password to track your application.','അപേക്ഷയുടെ നില അറിയാൻ മൊബൈൽ നമ്പറും പാസ്‌വേഡും ഉപയോഗിച്ച് ലോഗിൻ ചെയ്യുക.','விண்ணப்ப நிலையை அறிய மொபைல் எண் மற்றும் கடவுச்சொல்லுடன் உள்நுழையவும்.'],
+due:['Due list','കുടിശ്ശിക പട്ടിക','நிலுவைப் பட்டியல்'],renewal:['Renewal','പുതുക്കൽ','புதுப்பித்தல்'],close:['Close','അടയ്ക്കുക','மூடு'],btype:['Business type','സ്ഥാപനത്തിന്റെ തരം','தொழில் வகை'],bt1:['Metal / iron','ലോഹം / ഇരുമ്പ്','உலோகம் / இரும்பு'],bt2:['Paper & cardboard','പേപ്പർ & കാർഡ്ബോർഡ്','காகிதம் & அட்டை'],bt3:['Plastic','പ്ലാസ്റ്റിക്','பிளாஸ்டிக்'],bt4:['E-waste','ഇ-വേസ്റ്റ്','மின்னணுக் கழிவு'],bt5:['Mixed scrap','മിശ്രിത ആക്രി','கலப்புப் பழைய பொருட்கள்'],
+lv_state:['State level','സംസ്ഥാന തലം','மாநில அளவு'],lv_district:['District level','ജില്ലാ തലം','மாவட்ட அளவு'],lv_local:['Local level','ലോക്കൽ തലം','உள்ளூர் அளவு'],nlv:['Level','തലം','நிலை'],renewBy:['Pay the renewal fee before','പുതുക്കൽ ഫീസ് അടയ്ക്കേണ്ട അവസാന തീയതി','புதுப்பித்தல் கட்டணம் செலுத்த கடைசி தேதி'],
+ren_date:['Payment last date','പണമടയ്ക്കേണ്ട അവസാന തീയതി','கட்டணம் செலுத்த கடைசி தேதி'],ren_send:['Send renewal reminders','പുതുക്കൽ അറിയിപ്പ് അയയ്ക്കുക','புதுப்பித்தல் நினைவூட்டல் அனுப்பு'],ren_close:['Close renewal: mark unpaid as Due (demo of the deadline passing)','പുതുക്കൽ അവസാനിപ്പിക്കുക: അടയ്ക്കാത്തവരെ കുടിശ്ശികയാക്കുക (ഡെമോ)','புதுப்பித்தலை முடி: செலுத்தாதவர்களை நிலுவையாக்கு (மாதிரி)'],ren_info:['Members whose membership ends on or before this date are asked to pay. Members who have not paid after this date become Due.','ഈ തീയതിയോ അതിനു മുമ്പോ കാലാവധി തീരുന്നവരോട് പണമടയ്ക്കാൻ ആവശ്യപ്പെടും. ഈ തീയതിക്കു ശേഷവും അടയ്ക്കാത്തവർ കുടിശ്ശികയാകും.','இந்தத் தேதிக்குள் அல்லது அதற்கு முன் காலாவதியாகும் உறுப்பினர்களுக்குக் கட்டணம் கேட்கப்படும். இந்தத் தேதிக்குப் பிறகும் செலுத்தாதவர்கள் நிலுவையில் வருவர்.'],ren_n:['members notified','അംഗങ്ങൾക്ക് അറിയിപ്പ് അയച്ചു','உறுப்பினர்களுக்கு அறிவிக்கப்பட்டது'],ren_d:['members marked Due','അംഗങ്ങളെ കുടിശ്ശികയാക്കി','உறுப்பினர்கள் நிலுவையில்'],n_ren:['Please pay your renewal fee before','പുതുക്കൽ ഫീസ് അടയ്ക്കേണ്ട അവസാന തീയതി','புதுப்பித்தல் கட்டணம் செலுத்த கடைசி தேதி'],
+c_rm:['Your membership is removed. Contact your Local Committee.','നിങ്ങളുടെ അംഗത്വം നീക്കി. ലോക്കൽ കമ്മിറ്റിയെ ബന്ധപ്പെടുക.','உங்கள் உறுப்பினர் நீக்கப்பட்டது. உள்ளூர் குழுவைத் தொடர்பு கொள்ளவும்.'],s_tdel:['Temporarily Removed','താൽക്കാലികമായി നീക്കി','தற்காலிகமாக நீக்கப்பட்டது'],s_del:['Removed (Permanent)','സ്ഥിരമായി നീക്കി','நிரந்தரமாக நீக்கப்பட்டது'],
+dRem:['Send reminder to all','എല്ലാവർക്കും ഓർമ്മപ്പെടുത്തൽ','அனைவருக்கும் நினைவூட்டல்'],dNot:['Post a notice for this area','ഈ പ്രദേശത്തേക്ക് അറിയിപ്പ്','இந்தப் பகுதிக்கு அறிவிப்பு'],rsn:['Reason','കാരണം','காரணம்'],tdel:['Remove temporarily','താൽക്കാലികമായി നീക്കുക','தற்காலிகமாக நீக்கு'],delp:['Remove permanently','സ്ഥിരമായി നീക്കുക','நிரந்தரமாக நீக்கு'],rest:['Restore','പുനഃസ്ഥാപിക്കുക','மீட்டெடு'],
+rs1:['Will pay soon','ഉടൻ അടയ്ക്കും','விரைவில் செலுத்துவார்'],rs2:['Not reachable','ബന്ധപ്പെടാനായില്ല','தொடர்பு கொள்ள முடியவில்லை'],rs3:['Business closed','സ്ഥാപനം അടച്ചു','வணிகம் மூடப்பட்டது'],rs4:['Not continuing','തുടരുന്നില്ല','தொடரவில்லை'],rs5:['Other','മറ്റുള്ളവ','மற்றவை'],e_rs:['Select a reason first','ആദ്യം കാരണം തിരഞ്ഞെടുക്കുക','முதலில் காரணத்தைத் தேர்ந்தெடுக்கவும்'],
+dnT:['Renewal fee pending – please pay','പുതുക്കൽ ഫീസ് അടയ്ക്കാനുണ്ട് – ദയവായി അടയ്ക്കുക','புதுப்பித்தல் கட்டணம் நிலுவை – தயவுசெய்து செலுத்தவும்'],dnS:['Members with a pending renewal fee: please pay online or at the local office.','പുതുക്കൽ ഫീസ് ബാക്കിയുള്ള അംഗങ്ങൾ: ഓൺലൈനായോ ലോക്കൽ ഓഫീസിലോ അടയ്ക്കുക.','புதுப்பித்தல் கட்டணம் நிலுவையில் உள்ள உறுப்பினர்கள்: ஆன்லைனில் அல்லது உள்ளூர் அலுவலகத்தில் செலுத்தவும்.'],
+h_Due:['Due','കുടിശ്ശിക','நிலுவை'],h_Removed:['Removed permanently','സ്ഥിരമായി നീക്കി','நிரந்தரமாக நீக்கப்பட்டது'],'h_Temp removed':['Removed temporarily','താൽക്കാലികമായി നീക്കി','தற்காலிகமாக நீக்கப்பட்டது'],h_Restored:['Restored','പുനഃസ്ഥാപിച്ചു','மீட்டெடுக்கப்பட்டது'],
+help:['Cannot log in? Contact your Local Committee.','ലോഗിൻ ചെയ്യാനാകുന്നില്ലേ? ലോക്കൽ കമ്മിറ്റിയെ ബന്ധപ്പെടുക.','உள்நுழைய முடியவில்லையா? உள்ளூர் குழுவைத் தொடர்பு கொள்ளவும்.']};
+Object.assign(T,{"sw_adm": ["Switch to committee account", "കമ്മിറ്റി അക്കൗണ്ടിലേക്ക് മാറുക", "குழு கணக்கிற்கு மாறு"], "sw_mem": ["Switch to my member account", "എന്റെ അംഗ അക്കൗണ്ടിലേക്ക് മാറുക", "என் உறுப்பினர் கணக்கிற்கு மாறு"], "cardd": ["Card", "കാർഡ്", "அட்டை"], "cards": ["card(s)", "കാർഡുകൾ", "அட்டைகள்"], "cards_all": ["Print cards of all active members", "സജീവ അംഗങ്ങളുടെ കാർഡുകൾ പ്രിന്റ് ചെയ്യുക", "செயலில் உள்ள உறுப்பினர்களின் அட்டைகளை அச்சிடு"], "progs": ["Programs", "പരിപാടികൾ", "நிகழ்ச்சிகள்"], "prog_h": ["Our programs", "ഞങ്ങളുടെ പരിപാടികൾ", "எங்கள் நிகழ்ச்சிகள்"], "pr_add": ["Add program", "പരിപാടി ചേർക്കുക", "நிகழ்ச்சியைச் சேர்"], "pr_edit": ["Edit", "തിരുത്തുക", "திருத்து"], "pr_del": ["Delete", "ഇല്ലാതാക്കുക", "நீக்கு"], "pr_t": ["Heading", "തലക്കെട്ട്", "தலைப்பு"], "pr_p": ["Photo (replaces the current one)", "ഫോട്ടോ (നിലവിലുള്ളത് മാറ്റും)", "புகைப்படம் (தற்போதையதை மாற்றும்)"], "pr_save": ["Save", "സേവ് ചെയ്യുക", "சேமி"], "pr_cancel": ["Cancel", "റദ്ദാക്കുക", "ரத்து"], "pr_e": ["Enter a heading, and a photo for a new program", "തലക്കെട്ട് നൽകുക; പുതിയ പരിപാടിക്ക് ഫോട്ടോയും വേണം", "தலைப்பை உள்ளிடவும்; புதிய நிகழ்ச்சிக்கு புகைப்படமும் தேவை"], "pr_max": ["Maximum 10 programs for this level and place", "ഈ തലത്തിൽ പരമാവധി 10 പരിപാടികൾ", "இந்த நிலைக்கு அதிகபட்சம் 10 நிகழ்ச்சிகள்"], "pr_ok": ["Program saved", "പരിപാടി സേവ് ചെയ്തു", "நிகழ்ச்சி சேமிக்கப்பட்டது"], "pr_gone": ["Program deleted", "പരിപാടി ഇല്ലാതാക്കി", "நிகழ்ச்சி நீக்கப்பட்டது"], "pr_info": ["Photos and headings shown on the home page. The level decides who sees them, like notices. Up to 10 per level and place.", "ഹോം പേജിൽ കാണിക്കുന്ന ഫോട്ടോകളും തലക്കെട്ടുകളും. നോട്ടീസ് പോലെ തലം അനുസരിച്ച് ആർക്കൊക്കെ കാണാം എന്ന് തീരുമാനിക്കും. ഒരു തലത്തിനും സ്ഥലത്തിനും 10 വരെ.", "முகப்புப் பக்கத்தில் காட்டப்படும் புகைப்படங்களும் தலைப்புகளும். அறிவிப்புகளைப் போல நிலை யார் பார்க்கலாம் என்பதைத் தீர்மானிக்கும். ஒவ்வொரு நிலைக்கும் இடத்திற்கும் 10 வரை."], "show": ["Show", "കാണിക്കുക", "காட்டு"], "hide": ["Hide", "മറയ്ക്കുക", "மறை"], "pw_chg": ["Change password", "പാസ്‌വേഡ് മാറ്റുക", "கடவுச்சொல்லை மாற்று"], "pw_cur": ["Current password", "നിലവിലെ പാസ്‌വേഡ്", "தற்போதைய கடவுச்சொல்"], "pw_new": ["New password", "പുതിയ പാസ്‌വേഡ്", "புதிய கடவுச்சொல்"], "pw_cf": ["Confirm new password", "പുതിയ പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക", "புதிய கடவுச்சொல்லை உறுதிப்படுத்து"], "pw_ok": ["Password changed", "പാസ്‌വേഡ് മാറ്റി", "கடவுச்சொல் மாற்றப்பட்டது"], "pw_bad": ["Current password is wrong", "നിലവിലെ പാസ്‌വേഡ് തെറ്റാണ്", "தற்போதைய கடவுச்சொல் தவறு"], "pw_mis": ["Passwords do not match", "പാസ്‌വേഡുകൾ ചേരുന്നില്ല", "கடவுச்சொற்கள் பொருந்தவில்லை"], "pw_must": ["Please set a new password to continue", "തുടരാൻ പുതിയ പാസ്‌വേഡ് സെറ്റ് ചെയ്യുക", "தொடர புதிய கடவுச்சொல்லை அமைக்கவும்"], "pw_reset": ["Reset password", "പാസ്‌വേഡ് റീസെറ്റ് ചെയ്യുക", "கடவுச்சொல்லை மீட்டமை"], "pw_tmp": ["Temporary password, shown only once. Give it to the person; they must change it at next login:", "താൽക്കാലിക പാസ്‌വേഡ്, ഒരിക്കൽ മാത്രം കാണിക്കും. അടുത്ത ലോഗിനിൽ അവർ അത് മാറ്റണം:", "தற்காலிக கடவுச்சொல், ஒருமுறை மட்டுமே காட்டப்படும். அடுத்த உள்நுழைவில் அவர்கள் மாற்ற வேண்டும்:"], "pw_adm": ["Reset password for any account", "ഏതെങ്കിലും അക്കൗണ്ടിന്റെ പാസ്‌വേഡ് റീസെറ്റ് ചെയ്യുക", "எந்தக் கணக்கின் கடவுச்சொல்லையும் மீட்டமை"], "e_pw": ["Use at least 6 characters, with at least one letter and one number", "കുറഞ്ഞത് 6 അക്ഷരം, ഒരു അക്ഷരവും ഒരു അക്കവും വേണം", "குறைந்தது 6 எழுத்துகள், ஒரு எழுத்தும் ஒரு எண்ணும் வேண்டும்"], "fp": ["Forgot password?", "പാസ്‌വേഡ് മറന്നോ?", "கடவுச்சொல் மறந்துவிட்டதா?"], "fp_info": ["Passwords cannot be viewed or sent. Your Local Committee can reset it for you. Contact:", "പാസ്‌വേഡ് കാണാനോ അയയ്ക്കാനോ കഴിയില്ല. ലോക്കൽ കമ്മിറ്റിക്ക് റീസെറ്റ് ചെയ്യാം. ബന്ധപ്പെടുക:", "கடவுச்சொல்லைப் பார்க்கவோ அனுப்பவோ முடியாது. உள்ளூர் குழு மீட்டமைக்கலாம். தொடர்பு:"], "fp_info2": ["Enter your mobile number first, then choose Forgot password.", "ആദ്യം മൊബൈൽ നമ്പർ നൽകുക, തുടർന്ന് പാസ്‌വേഡ് മറന്നോ? തിരഞ്ഞെടുക്കുക.", "முதலில் மொபைல் எண்ணை உள்ளிடவும், பிறகு கடவுச்சொல் மறந்துவிட்டதா? என்பதைத் தேர்வு செய்யவும்."], "fp_adm": ["Committee account: contact the system administrator:", "കമ്മിറ്റി അക്കൗണ്ട്: സിസ്റ്റം അഡ്മിനിസ്ട്രേറ്ററെ ബന്ധപ്പെടുക:", "குழு கணக்கு: கணினி நிர்வாகியைத் தொடர்பு கொள்ளவும்:"], "e_lock": ["Too many wrong attempts. Please contact your Local Committee to reset your password.", "ധാരാളം തെറ്റായ ശ്രമങ്ങൾ. പാസ്‌വേഡ് റീസെറ്റ് ചെയ്യാൻ ലോക്കൽ കമ്മിറ്റിയെ ബന്ധപ്പെടുക.", "பல தவறான முயற்சிகள். கடவுச்சொல்லை மீட்டமைக்க உள்ளூர் குழுவைத் தொடர்பு கொள்ளவும்."]});
+Object.assign(T,{"cardset": ["Card issue", "കാർഡ് വിതരണം", "அட்டை வழங்கல்"], "rmq": ["Removal requests", "നീക്കം ചെയ്യൽ അഭ്യർത്ഥനകൾ", "நீக்கல் கோரிக்கைகள்"], "issue": ["Date of issue", "നൽകിയ തീയതി", "வழங்கிய தேதி"], "cs_cur": ["Current card cycle", "നിലവിലെ കാർഡ് സൈക്കിൾ", "தற்போதைய அட்டைச் சுழற்சி"], "cs_def": ["Using the default card design.", "സ്ഥിരം കാർഡ് ഡിസൈൻ ഉപയോഗിക്കുന്നു.", "இயல்பு அட்டை வடிவமைப்பு பயன்படுத்தப்படுகிறது."], "cs_design": ["New card design (optional)", "പുതിയ കാർഡ് ഡിസൈൻ (ഓപ്ഷണൽ)", "புதிய அட்டை வடிவமைப்பு (விருப்பம்)"], "cs_keep": ["If you upload nothing, the current design is kept and only the dates change. Members get the new card only after paying the renewal fee; until then they see their old card marked not valid.", "ഒന്നും അപ്‌ലോഡ് ചെയ്തില്ലെങ്കിൽ നിലവിലെ ഡിസൈൻ തുടരും, തീയതികൾ മാത്രം മാറും. പുതുക്കൽ ഫീസ് അടച്ചാൽ മാത്രമേ പുതിയ കാർഡ് ലഭിക്കൂ; അതുവരെ പഴയ കാർഡ് സാധുവല്ല എന്ന അടയാളത്തോടെ കാണിക്കും.", "எதையும் பதிவேற்றாவிட்டால் தற்போதைய வடிவமைப்பு தொடரும், தேதிகள் மட்டும் மாறும். புதுப்பித்தல் கட்டணம் செலுத்திய பின்னரே புதிய அட்டை கிடைக்கும்; அதுவரை பழைய அட்டை செல்லாது எனக் குறிக்கப்பட்டு காட்டப்படும்."], "cs_aff": ["member(s) must pay the renewal fee to receive the new card", "പുതിയ കാർഡിനായി അംഗങ്ങൾ പുതുക്കൽ ഫീസ് അടയ്ക്കണം", "புதிய அட்டைக்கு உறுப்பினர்கள் புதுப்பித்தல் கட்டணம் செலுத்த வேண்டும்"], "cs_pub": ["Publish new card cycle", "പുതിയ കാർഡ് സൈക്കിൾ പ്രസിദ്ധീകരിക്കുക", "புதிய அட்டைச் சுழற்சியை வெளியிடு"], "cs_n": ["members notified", "അംഗങ്ങളെ അറിയിച്ചു", "உறுப்பினர்களுக்கு அறிவிக்கப்பட்டது"], "e_cs": ["Enter the issue date and a later validity date", "നൽകിയ തീയതിയും അതിനു ശേഷമുള്ള സാധുത തീയതിയും നൽകുക", "வழங்கிய தேதியையும் அதற்குப் பிந்தைய செல்லுபடி தேதியையும் உள்ளிடவும்"], "c_old": ["OLD CARD – NOT VALID", "പഴയ കാർഡ് – സാധുവല്ല", "பழைய அட்டை – செல்லாது"], "c_oldb": ["Pay the renewal fee to receive your new card.", "പുതിയ കാർഡ് ലഭിക്കാൻ പുതുക്കൽ ഫീസ് അടയ്ക്കുക.", "புதிய அட்டையைப் பெற புதுப்பித்தல் கட்டணத்தைச் செலுத்தவும்."], "n_cardnew": ["A new membership card cycle has started. Pay the renewal fee to receive your new card.", "പുതിയ കാർഡ് സൈക്കിൾ ആരംഭിച്ചു. പുതിയ കാർഡിനായി പുതുക്കൽ ഫീസ് അടയ്ക്കുക.", "புதிய அட்டைச் சுழற்சி தொடங்கியது. புதிய அட்டையைப் பெற புதுப்பித்தல் கட்டணத்தைச் செலுத்தவும்."], "rq_pend": ["Waiting for approval", "അംഗീകാരത്തിനായി കാത്തിരിക്കുന്നു", "அங்கீகாரத்திற்காகக் காத்திருக்கிறது"], "rq_sent": ["Removal request sent to District and State for approval", "നീക്കം ചെയ്യൽ അഭ്യർത്ഥന ജില്ലാ, സംസ്ഥാന അംഗീകാരത്തിനായി അയച്ചു", "நீக்கல் கோரிக்கை மாவட்ட, மாநில அங்கீகாரத்திற்கு அனுப்பப்பட்டது"], "rq_d": ["Awaiting District approval", "ജില്ലാ അംഗീകാരത്തിനായി", "மாவட்ட அங்கீகாரத்திற்காக"], "rq_s": ["Awaiting State approval", "സംസ്ഥാന അംഗീകാരത്തിനായി", "மாநில அங்கீகாரத்திற்காக"], "rq_info": ["Removal happens only after the District and then the State Committee approve a request from the Local Committee.", "ജില്ലാ, തുടർന്ന് സംസ്ഥാന കമ്മിറ്റികൾ ലോക്കൽ കമ്മിറ്റിയുടെ അഭ്യർത്ഥന അംഗീകരിച്ചാൽ മാത്രമേ നീക്കം ചെയ്യൂ.", "உள்ளூர் குழுவின் கோரிக்கையை மாவட்டக் குழுவும் பின்னர் மாநிலக் குழுவும் அங்கீகரித்த பின்னரே நீக்கம் நடைபெறும்."], "e_del": ["Your membership was removed permanently. Please register again as a new member.", "നിങ്ങളുടെ അംഗത്വം സ്ഥിരമായി നീക്കം ചെയ്തു. പുതിയ അംഗമായി വീണ്ടും രജിസ്റ്റർ ചെയ്യുക.", "உங்கள் உறுப்பினர் நிலை நிரந்தரமாக நீக்கப்பட்டது. புதிய உறுப்பினராக மீண்டும் பதிவு செய்யவும்."], "e_tdel": ["Your membership is temporarily removed. Please contact your Local Committee:", "നിങ്ങളുടെ അംഗത്വം താൽക്കാലികമായി നീക്കിയിരിക്കുന്നു. ലോക്കൽ കമ്മിറ്റിയെ ബന്ധപ്പെടുക:", "உங்கள் உறுப்பினர் நிலை தற்காலிகமாக நீக்கப்பட்டுள்ளது. உள்ளூர் குழுவைத் தொடர்பு கொள்ளவும்:"], "h_Removal requested": ["Removal requested", "നീക്കം ചെയ്യാൻ അഭ്യർത്ഥിച്ചു", "நீக்கக் கோரப்பட்டது"], "h_Removal rejected": ["Removal rejected", "നീക്കം ചെയ്യൽ നിരസിച്ചു", "நீக்கல் நிராகரிக்கப்பட்டது"], "h_Removal: District approved": ["Removal: District approved", "നീക്കം: ജില്ല അംഗീകരിച്ചു", "நீக்கம்: மாவட்டம் அங்கீகரித்தது"]});
+const D={fee:1000,idReq:false,prog:[{id:1,ti:'Scrap collection awareness drive',img:'',lv:'state',dist:'',area:''},{id:2,ti:'Recycling safety workshop',img:'',lv:'state',dist:'',area:''},{id:3,ti:'Kottayam district members meet',img:'',lv:'district',dist:'Kottayam',area:''},{id:4,ti:'Pala area clean-up day',img:'',lv:'local',dist:'Kottayam',area:'Pala'}],card:{cycle:1,issue:'2026-10-26',valid:'2028-10-25',ds:{1:''}},deadline:'2026-12-31',m:[
+{id:1,name:'Abdul Rahman',mobile:'9000000001',biz:'Rahman Scrap Traders',area:'Pala',dist:'Kottayam',st:'active',no:'AKD-1001',valid:'2027-03-31',role:'member',h:['Approved']},
+{id:2,name:'Suresh Kumar',mobile:'9000000002',biz:'SK Metals',area:'Pala',dist:'Kottayam',st:'active',no:'AKD-1002',valid:'2026-11-05',role:'member',h:['Approved']},
+{id:3,name:'Mohammed Ali',mobile:'9000000003',biz:'Ali Recyclers',area:'Pala',dist:'Kottayam',st:'due',no:'AKD-1003',valid:'2026-04-30',role:'member',h:['Approved']},
+{id:4,name:'Joseph Thomas',mobile:'9000000004',biz:'JT Paper & Scrap',area:'Pala',dist:'Kottayam',st:'pl',no:'',valid:'',role:'member',h:['Submitted']},
+{id:5,name:'Biju P',mobile:'9000000005',biz:'Biju Iron Mart',area:'Ettumanoor',dist:'Kottayam',st:'pd',no:'',valid:'',role:'member',h:['Submitted','Local approved']},
+{id:6,name:'Anil Nair',mobile:'9000000006',biz:'Nair Traders',area:'Vaikom',dist:'Kottayam',st:'ps',no:'',valid:'',role:'member',h:['Submitted','Local approved','District approved']},
+{id:7,name:'Mary Joseph',mobile:'9000000007',biz:'MJ Recyclers',area:'Pala',dist:'Kottayam',st:'pp',no:'',valid:'',role:'member',h:['Submitted','Local approved','District approved','State approved']},
+{id:8,name:'Rajan K',mobile:'9000000008',biz:'RK Scrap',area:'Pala',dist:'Kottayam',st:'tdel',no:'AKD-1008',valid:'2027-01-31',role:'member',h:['Approved','Temp removed']},{id:9,name:'Salim P',mobile:'9000000009',biz:'SP Metals',area:'Pala',dist:'Kottayam',st:'del',no:'AKD-1009',valid:'2026-06-30',role:'member',h:['Approved','Removed']},{id:11,name:'Thomas V',mobile:'9000000011',biz:'TV Traders',area:'Pala',dist:'Kottayam',st:'due',no:'AKD-1011',valid:'2026-05-31',role:'member',rs:'rs2',rq:{ty:'del',st:'d'},h:['Approved','Due','Removal requested']},
+{id:12,name:'Local Admin – Pala (member)',mobile:'9000000010',biz:'Pala Scrap Traders',area:'Pala',dist:'Kottayam',st:'active',no:'AKD-1012',valid:'2027-03-31',role:'member',link:10,h:['Approved','Active']},{id:13,name:'District Admin – Kottayam (member)',mobile:'9000000020',biz:'Kottayam Metals',area:'Pala',dist:'Kottayam',st:'active',no:'AKD-1013',valid:'2027-03-31',role:'member',link:20,h:['Approved','Active']},{id:14,name:'State Admin (member)',mobile:'9000000030',biz:'Kerala Recyclers',area:'Pala',dist:'Kottayam',st:'active',no:'AKD-1014',valid:'2027-03-31',role:'member',link:30,h:['Approved','Active']},
+{id:10,link:12,name:'Local Committee – Kottayam',mobile:'9000000010',dist:'Kottayam',area:'Pala',role:'local'},{id:20,link:13,name:'District Committee – Kottayam',mobile:'9000000020',dist:'Kottayam',role:'district'},
+{id:30,link:14,name:'State Committee',mobile:'9000000030',role:'state'},{id:40,name:'System Admin',mobile:'9000000040',role:'admin'}],
+notices:[{k:1,d:'2026-10-20',c:'Meetings',lv:'state',a:'public',imp:1},{k:2,d:'2026-10-12',c:'Campaigns',lv:'state',a:'public'},{k:3,d:'2026-10-10',c:'Internal',lv:'state',a:'committee'},{k:0,ti:'Kottayam district meeting',su:'District members: meeting next month, venue to follow.',d:'2026-10-22',c:'Meetings',lv:'district',dist:'Kottayam',a:'members'},{k:0,ti:'Pala unit: collection point update',su:'Pala members: please check the new collection point details.',d:'2026-10-24',c:'General',lv:'local',dist:'Kottayam',area:'Pala',a:'members'}],
+pays:[{id:1,mid:1,st:'p_ok',ref:'SIM-0001',amt:1000},{id:2,mid:2,st:'p_pending',ref:'',amt:1000},{id:3,mid:3,st:'p_pending',ref:'',amt:1000},{id:4,mid:7,st:'p_pending',ref:'',amt:1000}],
+nf:[{mid:2,k:'n_ren',d:'2026-12-31',r:0},{mid:1,k:'n_ok',r:0},{mid:3,k:'n_exp',r:0},{mid:7,k:'n_ppd',r:0}],log:['System initialised (demo)']};
+D.m.forEach((m,i)=>{if(m.role=='member'){if(m.no){m.cc=1;m.issue='2025-04-01'}m.btype=m.btype||'bt'+(i%5+1);m.addr=m.addr||'Sample address, '+m.area;m.baddr=m.baddr||m.biz+', '+m.area}});
+let L=0,U=null,R='login',F='all',Q='',PH='';
+const AR={Kottayam:['Pala','Ettumanoor','Vaikom','Kottayam Town'],Ernakulam:['Kalamassery','Aluva','Perumbavoor'],Thrissur:['Chalakudy','Thrissur Town'],Kozhikode:['Feroke','Kozhikode Town']};
+const opt=a=>a.map(x=>`<option>${x}</option>`).join('');
+const optS=(a,x)=>a.map(v=>`<option ${v==x?'selected':''}>${v}</option>`).join(''),renewWin=m=>m.st=='active'&&D.pays.some(p=>p.mid==m.id&&p.st=='p_pending'),nt=n=>t(n.k)+(n.d?' '+n.d:'');
+function nform(){if(!U||U.role=='member')return'';const r=U.role,top=r=='state'||r=='admin',lvs=r=='local'?['local']:r=='district'?['district','local']:['state','district','local'],d0=top?'Kottayam':U.dist;return`<details class="c" style="margin:10px 0"><summary><b>${t('nf_title')}</b></summary><form class="f" onsubmit="return pn(event)"><label for="nti">${t('ntl')}</label><input id="nti"><div class="er" id="enti"></div><label for="nsu">${t('nsum')}</label><textarea id="nsu" rows="2"></textarea><div class="two"><div><label for="nlv">${t('nlv')}</label><select id="nlv" onchange="nlc()">${lvs.map(l=>`<option value="${l}">${t('lv_'+l)}</option>`).join('')}</select></div><div><label for="nca">${t('ncat')}</label><select id="nca">${['General','Meetings','Campaigns'].map(c=>`<option value="${c}">${t('c_'+c)}</option>`).join('')}</select></div><div id="wd"><label for="nds">${t('dist')}</label><select id="nds" ${top?'':'disabled'} onchange="ard2()">${optS(Object.keys(AR),d0)}</select></div><div id="wa"><label for="nar">${t('area')}</label><select id="nar" ${r=='local'?'disabled':''}>${optS(AR[d0],U.area)}</select></div><div><label for="nau">${t('naud')}</label><select id="nau"></select></div></div><label style="font-weight:400"><input id="nim" type="checkbox" style="width:auto"> ${t('nimp')}</label><br><button class="btn">${t('npub')}</button></form></details>`}
+function nlc(){const l=$('#nlv').value;$('#wd').style.display=l=='state'?'none':'';$('#wa').style.display=l=='local'?'':'none';$('#nau').innerHTML=(l=='state'?['public','members','committee']:['members','committee']).map(a=>`<option value="${a}">${t('aud_'+a)}</option>`).join('')}
+function ard2(){$('#nar').innerHTML=opt(AR[$('#nds').value])}
+function pn(ev){ev.preventDefault();if(!U||U.role=='member')return false;const ti=$('#nti').value.trim();if(!ti){$('#enti').textContent=t('e_nt');return false}let lv=$('#nlv').value,dist=$('#nds').value,area=$('#nar').value;const a=$('#nau').value;if(U.role=='local'){lv='local';dist=U.dist;area=U.area}else if(U.role=='district'){dist=U.dist;if(lv=='state')lv='district'}if(lv=='state'&&!['state','admin'].includes(U.role))return false;const n={k:0,ti,su:$('#nsu').value.trim(),d:'2026-10-26',c:$('#nca').value,lv,dist:lv=='state'?'':dist,area:lv=='local'?area:'',a,imp:$('#nim').checked};D.notices.unshift(n);if(a!='committee')D.m.filter(m=>m.role=='member'&&m.no&&visFor(m,n)).forEach(m=>D.nf.push({mid:m.id,k:'n_new',r:0}));D.log.push(U.role+' notice ('+lv+'/'+a+'): '+ti);toast(t('t_pub'));draw();return false}
+function pop(id){const m=D.m.find(x=>x.id==id);if(!m||!scope().some(x=>x.id==id))return;const p=[...D.pays].reverse().find(x=>x.mid==id),row=(k,v)=>`<tr><td><b>${t(k)}</b></td><td>${v||'—'}</td></tr>`,d=document.createElement('div');d.className='mod';d.onclick=()=>d.remove();d.innerHTML=`<div class="c" onclick="event.stopPropagation()" role="dialog" aria-modal="true"><div class="row">${m.photo?`<img class="pv" src="${m.photo}" alt="">`:''}<h3 style="margin:0">${e(m.name)}</h3></div><table style="margin:10px 0">${row('number',m.no)}${row('status',bd(m.st))}${row('pay',p?bd(p.st)+' ₹'+p.amt:'')}${row('valid',m.valid)}${row('mobile',e(m.mobile))}${row('area',e(m.area))}${row('dist',e(m.dist))}${row('biz',e(m.biz))}${row('btype',m.btype?t(m.btype):'')}${row('addr',e(m.addr))}${row('baddr',e(m.baddr))}</table><button class="btn sm" onclick="this.closest('.mod').remove()">${t('close')}</button></div>`;$('#portal').append(d)}
+function rsn(id,v){const m=D.m.find(x=>x.id==id);m.rs=v;D.log.push('Reason for '+m.name+': '+v);toast(t('t_saved'))}
+function rm(id,ty){if(U.role!='local')return;const m=D.m.find(x=>x.id==id);if(m.rq)return;if(!m.rs){toast(t('e_rs'));return}if(!confirm(t(ty=='del'?'delp':'tdel')+'?'))return;m.rq={ty,st:'d'};m.h.push('Removal requested');D.log.push('local: removal request ('+ty+') '+m.name+' ('+m.rs+')');toast(t('rq_sent'));draw()}
+function rqAct(id,y){const m=D.m.find(x=>x.id==id);if(!m||!m.rq||!['district','state'].includes(U.role)||m.rq.st!=(U.role=='district'?'d':'s')||!scope().some(x=>x.id==id))return;if(!confirm(t(y?'approve':'reject')+'?'))return;if(!y){m.h.push('Removal rejected');D.log.push(U.role+': removal rejected '+m.name);m.rq=null}else if(U.role=='district'){m.rq.st='s';m.h.push('Removal: District approved');D.log.push('district: removal approved '+m.name)}else{m.st=m.rq.ty;m.h.push(m.rq.ty=='del'?'Removed':'Temp removed');D.log.push('state: removal approved ('+m.rq.ty+') '+m.name);m.rq=null}toast(t('t_ok'));draw()}
+function rst(id){if(U.role!='local')return;const m=D.m.find(x=>x.id==id);m.st='due';m.h.push('Restored');D.log.push('local: restored '+m.name);toast(t('t_ok'));draw()}
+function rd(){if(U.role!='local')return;scope().filter(m=>m.st=='due').forEach(m=>D.nf.push({mid:m.id,k:'n_exp',r:0}));toast(t('t_ok'))}
+function dn(){if(U.role!='local')return;D.notices.unshift({k:0,ti:T.dnT[L],su:T.dnS[L],d:'2026-10-26',c:'General',lv:'local',dist:U.dist,area:U.area,a:'members',imp:1});D.log.push('local: due-fee notice');toast(t('t_pub'));go('notices')}
+function renSend(){if(!['state','admin'].includes(U.role))return;let n=0;D.m.filter(m=>m.role=='member'&&m.st=='active'&&m.valid&&m.valid<=D.deadline).forEach(m=>{if(!D.pays.some(p=>p.mid==m.id&&['p_pending','p_sub'].includes(p.st)))D.pays.push({id:Date.now()%1e6+n,mid:m.id,st:'p_pending',ref:'',amt:D.fee});D.nf.push({mid:m.id,k:'n_ren',d:D.deadline,r:0});n++});D.log.push('Renewal reminders sent: '+n);toast(n+' '+t('ren_n'))}
+function renClose(){if(!['state','admin'].includes(U.role))return;let n=0;D.m.filter(m=>m.role=='member'&&m.st=='active'&&m.valid&&m.valid<=D.deadline&&D.pays.some(p=>p.mid==m.id&&p.st=='p_pending')).forEach(m=>{m.st='due';m.h.push('Due');D.nf.push({mid:m.id,k:'n_exp',r:0});n++});D.log.push('Renewal closed: '+n+' marked Due');toast(n+' '+t('ren_d'))}
+function cr(id,r){if(!can('roles'))return;const m=D.m.find(x=>x.id==id);m.role=r;D.log.push(m.name+' role set to '+r);toast(t('t_saved'))}
+function csvImp(inp){const f=inp.files[0];if(!f||!can('import'))return;const r=new FileReader();r.onload=()=>{const rows=r.result.split(/\r?\n/).filter(x=>x.trim()).map(l=>l.split(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/).map(c=>c.replace(/^"|"$/g,'').trim()));const h=rows.shift().map(x=>x.toLowerCase());const ix=k=>h.indexOf(k);let n=0,s=0;rows.forEach(c=>{const g=k=>c[ix(k)]||'',mob=g('mobile').replace(/\D/g,'').slice(-10);if(!g('name')||mob.length!=10||D.m.some(m=>m.mobile==mob)){s++;return}const v=g('valid_until')||nextY(),id=Date.now()%100000+500+n;D.m.push({id,name:g('name'),mobile:mob,biz:g('biz'),area:g('area'),dist:g('dist')||'Kottayam',st:v<'2026-10-26'?'expired':v<'2026-12-26'?'due':'active',no:'AKD-'+(2000+id),valid:v,pw:'demo123',role:'member',h:['Imported']});n++});D.log.push('Imported '+n+' members from sheet');toast(n+' '+t('impOk')+' / '+s+' '+t('impSkip'));draw()};r.readAsText(f)}
+const cardMsg=m=>`<div class="c"><p>${t(m.st=='due'?'c_exp':m.st=='pp'?'c_pp':['tdel','del'].includes(m.st)?'c_rm':'c_wait')}</p></div>`;
+const cardBlock=m=>m.st=='active'?`<h2>${t('card')}</h2>${cardH(m)}`:cardMsg(m);
+const tracker=m=>{const cur={pl:1,pd:2,ps:3,pp:4}[m.st];if(m.st=='rej')return`<div class="c" style="margin:12px 0"><p>${bd('rej')}</p><p>${t('n_rej')}</p></div>`;if(cur==null)return'';return`<h2>${t('track')}</h2><div class="trk">${[0,1,2,3,4,5].map(i=>`<div class="s ${i<cur?'dn':i==cur?'cu':''}"><i>${i<cur?'\u2713':i+1}</i><span>${t('tk'+i)}</span></div>`).join('')}</div><p>${bd(m.st)}</p>`};
+function ard(){$('#a').innerHTML=opt(AR[$('#d').value])}
+function sph(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=240;c.height=300;const x=c.getContext('2d'),s=Math.max(240/im.width,300/im.height),w=im.width*s,h=im.height*s;x.drawImage(im,(240-w)/2,(300-h)/2,w,h);PH=c.toDataURL('image/jpeg',.8);$('#pv').innerHTML=`<img class="pv" src="${PH}" alt="Your photo">`;$('#ep').textContent=''};im.src=r.result};r.readAsDataURL(f)}
+const t=k=>(T[k]||[k])[L]||T[k][0],e=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const bd=s=>`<span class="b ${s}">${t(s.startsWith('p_')?s:'s_'+s)}</span>`,$=s=>document.querySelector(s);
+const visFor=(u,n)=>{if(!u)return n.lv=='state'&&n.a=='public';if(u.role=='member')return n.a!='committee'&&(n.lv=='state'||(n.lv=='district'&&n.dist==u.dist)||(n.lv=='local'&&n.dist==u.dist&&n.area==u.area));if(u.role=='state'||u.role=='admin')return true;if(u.role=='district')return n.lv=='state'||n.dist==u.dist;return n.lv=='state'||(n.dist==u.dist&&(n.lv=='district'||n.area==u.area))},vis=n=>visFor(U,n),can=a=>U&&U.role=='admin'&&['notice','roles','fee','import'].includes(a),comm=()=>U&&U.role!='member',nextY=d=>{let x=new Date(d||'2026-10-26');x.setFullYear(x.getFullYear()+2);return x.toISOString().slice(0,10)};
+const toast=m=>{let x=document.createElement('div');x.className='toast';x.textContent=m;$('#portal').append(x);setTimeout(()=>x.remove(),3200)};
+const go=h=>{location.hash='#/p/'+h};
+const pub=['home','about','acts','mem','notices','contact'],mn=['dash','card','pay','notif','notices','profile'];
+const cn={local:['apps','due','rmq','members','notices','progs'],district:['apps','due','rmq','members','reports','notices','progs'],state:['apps','due','rmq','renewal','cardset','members','reports','notices','progs'],admin:['admin','renewal','members','reports','notices','progs']};
+const scope=()=>D.m.filter(m=>m.role=='member'&&(['state','admin'].includes(U.role)||(m.dist==U.dist&&(U.role!='local'||m.area==U.area))));
+const nav=()=>U?(U.role=='member'?mn:cn[U.role]):[];
+function mbt(){const o=$('#pnav').classList.toggle('open');$('#mb').setAttribute('aria-expanded',o)}
+function shell(){const n=nav(),pn=$('#pnav');pn.classList.remove('open');$('#pbar').hidden=!U;pn.innerHTML=n.map(x=>`<a href="#/p/${x}" class="${R==x?'on':''}">${t(x)}${x=='notif'&&U&&U.role=='member'?(c=>c?' ('+c+')':'')(D.nf.filter(n=>n.mid==U.id&&!n.r).length):''}${x=='msgs'?(c=>c?' ('+c+')':'')(D.mr.filter(r=>r.uid==U.id&&r.st=='new').length):''}</a>`).join('')+(U?`${U.link?`<a href="#" onclick="swAcc();return false">\u21c4 ${t(U.role=='member'?'sw_adm':'sw_mem')}</a>`:''}<a href="#/p/pw" class="${R=='pw'?'on':''}">${t('pw_chg')}</a><a href="#/" onclick="__logout();return false">${t('logout')}</a>`:'');$('#pdemo').textContent=t('foot')+(L==0?' Data resets when you refresh the page.':'')}
+const back=()=>U?`<p class="np"><a href="#/p/${U.role=='member'?'dash':cn[U.role][0]}">← ${t('back')}</a></p>`:'';
+const ph=()=>`<p class="demo">${t('ph')}</p>`;
+const nl=(list)=>list.map(n=>`<div class="c ${n.imp?'imp':''}" style="margin-bottom:10px"><b>${n.ti?e(n.ti):t('nt'+n.k)}</b> <span class="b">${t('c_'+n.c)}</span> <span class="b">${n.lv=='state'?t('lv_state'):e(n.lv=='district'?n.dist:n.area)}</span> ${U?`<span class="b">${t('aud_'+n.a)}</span>`:''} <span class="demo">${n.d}</span><p>${n.ti?e(n.su):t('ns'+n.k)}</p></div>`).join('')||`<p>${t('none')}</p>`;
+const V={
+home:()=>`<section class="hero" style="margin:0 -18px 8px;padding-left:18px;padding-right:18px"><h1>${t('hero')}</h1><p>${t('heroSub')}</p><a class="btn" href="#/p/register">${t('join')}</a><a class="btn ghost" href="#/p/login">${t('login')}</a></section>${progSec()}
+<h2>${t('benefits')}</h2><div class="g">${['b1','b2','b3'].map(k=>`<div class="c"><h3>${t(k)}</h3></div>`).join('')}</div>${ph()}
+<h2>${t('latest')}</h2>${nl(D.notices.filter(n=>visFor(null,n)).slice(0,2))}<a class="btn ghost" href="#/p/notices">${t('notices')}</a>`,
+about:()=>`<h2>${t('about')}</h2><div class="g"><div class="c"><h3>${t('abM')}</h3><p>${t('abM2')}</p></div><div class="c"><h3>${t('abV')}</h3><p>${t('abV2')}</p></div><div class="c"><h3>${t('abC')}</h3><p>${t('abC2')}</p></div></div>${ph()}`,
+acts:()=>`<h2>${t('acts')}</h2><div class="g">${['a1','a2','a3','a4'].map(x=>`<div class="c"><h3>${t(x)}</h3><p>${t('sample')}</p></div>`).join('')}</div>${ph()}`,
+mem:()=>`<h2>${t('mem')}</h2><div class="c"><h3>${t('how')}</h3><p>${t('how2')}</p></div><p>${t('mfee')}</p><a class="btn" href="#/p/register">${t('apply')}</a>`,
+notices:()=>{const cats=['all',...new Set(D.notices.map(n=>n.c))],l=D.notices.filter(n=>vis(n)&&(F=='all'||n.c==F));return`<h2>${t('notices')}</h2>${nform()}<div class="row">${cats.map(c=>`<button class="btn sm ${F==c?'':'ghost'}" onclick="F='${c}';draw()">${t(c=='all'?'all':'c_'+c)}</button>`).join('')}</div><br>${nl(l)}`},
+contact:()=>`<h2>${t('contact')}</h2><div class="g"><div class="c">info@aakrikada.example<br>+91 00000 00000<br>${t('kerala')}</div><form class="c f" onsubmit="event.preventDefault();toast(t('t_msg'));this.reset()"><label>${t('name')}</label><input required><label>${t('msg')}</label><textarea required rows=3></textarea><br><button class="btn">${t('send')}</button></form></div>`,
+register:()=>{PH='';const f=(k,i,x='')=>`<div><label for="${i}">${t(k)}</label><input id="${i}" ${x}><div class="er" id="e${i}"></div></div>`;
+return`<h2>${t('join')}</h2>${U&&U.role=='local'?'<p class="demo">'+t('assisted')+'</p>':''}<form class="c f" style="max-width:720px" onsubmit="return reg(event)" novalidate>
+<h3>${t('sec1')}</h3><div class="two">${f('name','n')}${f('mobile','m','inputmode=numeric maxlength=10')}${f('dob','dob','type=date')}${f('password','pw0','type=password autocomplete=new-password')}<div><label for="pl0">${t('plang')}</label><select id="pl0"><option value="en">English</option><option value="ml">മലയാളം</option><option value="ta">தமிழ்</option></select></div></div>${f('addr','ad')}
+<label>${t('photo')}</label><div class="row"><div id="pv" class="pv">${t('phLbl')}</div><label class="btn sm ghost">${t('upl')}<input type="file" accept="image/*" hidden onchange="sph(this)"></label><label class="btn sm ghost">${t('cam')}<input type="file" accept="image/*" capture="user" hidden onchange="sph(this)"></label></div><div class="er" id="ep"></div>
+<h3>${t('sec2')}</h3><div class="two">${f('biz','b')}${f('baddr','ba')}<div><label for="bt">${t('btype')}</label><select id="bt">${['bt1','bt2','bt3','bt4','bt5'].map(k=>`<option value="${k}">${t(k)}</option>`).join('')}</select></div><div><label for="d">${t('dist')}</label><select id="d" onchange="ard()">${opt(Object.keys(AR))}</select></div><div><label for="a">${t('area')}</label><select id="a">${opt(AR.Kottayam)}</select></div></div>
+${D.idReq?`<label for="idp">${t('idp')}</label><input id="idp" type="file" accept="image/*,.pdf">`:''}
+<label style="font-weight:400;margin-top:18px"><input id="dc" type="checkbox" style="width:auto"> ${t('decl')}</label><div class="er" id="edc"></div>
+<p class="demo">${t('feeNote')}<br>${t('demoDist')}</p><button class="btn" id="sb">${t('submit')}</button></form>`},
+login:()=>`<h2>${t('login')}</h2><form class="c f" style="max-width:420px" onsubmit="return lg(event)"><label>${t('mobile')}</label><input id="lm" inputmode="numeric"><label>${t('password')}</label><input id="lp" type="password"><div class="er" id="le"></div><button class="btn">${t('login')}</button> <button type="button" class="btn ghost" onclick="fpw()">${t('fp')}</button><p class="demo">${t('help')}</p></form>
+<div class="c demo" style="max-width:420px;margin-top:12px"><b>${t('demoAcc')}</b> (${t('password')}: demo123)<br>9000000001 ${t('s_active')} · 9000000002 ${t('s_active')} · 9000000003 ${t('s_due')}<br>9000000004 ${t('s_pl')} · 9000000007 ${t('s_pp')}<br>9000000008 ${t('s_tdel')} · 9000000009 ${t('s_del')}<br>9000000010 ${t('r_local')} · 9000000020 ${t('r_district')} · 9000000030 ${t('r_state')} · 9000000040 ${t('r_admin')}</div>`,
+dash:()=>{const m=U,my=D.nf.filter(n=>n.mid==m.id);return`<h2>${e(m.name)}</h2><div class="g"><div class="c"><p>${t('status')}</p>${bd(m.st)}</div><div class="c"><p>${t('number')}</p><h3>${m.no||'—'}</h3></div><div class="c"><p>${t('valid')}</p><h3>${m.valid||'—'}</h3></div></div>
+${tracker(m)}${cardBlock(m)}${['due','pp'].includes(m.st)||renewWin(m)?`<a class="btn" href="#/p/pay">${t(m.st=='pp'?'paynow':'renew')}</a>`:''}
+<h2>${t('notif')}</h2>${my.slice(-3).reverse().map(n=>`<div class="c" style="margin-bottom:8px">${nt(n)}</div>`).join('')||t('none')}
+<div class="row" style="margin-top:14px">${['profile','pay','notices'].map(x=>`<a class="btn ghost" href="#/p/${x}">${t(x)}</a>`).join('')}<button class="btn ghost" onclick="inst()">${t('install')}</button></div>`},
+profile:()=>`<h2>${t('profile')}</h2><div class="c">${[['name',U.name],['mobile',U.mobile],['biz',U.biz],['area',U.area],['dist',U.dist]].map(([k,v])=>`<p><b>${t(k)}:</b> ${e(v)}</p>`).join('')}</div><div class="row" style="margin-top:12px"><a class="btn" href="#/p/card">${t('card')}</a><a class="btn ghost" href="#/p/pay">${t('pay')}</a><button class="btn ghost" onclick="inst()">${t('install')}</button></div>${back()}`,
+card:()=>`<h2>${t('card')}</h2>${U.st=='active'?cardH(U):cardMsg(U)}<div class="row np" style="margin-top:12px"><button class="btn" onclick="print()">${t('print')}</button></div>${back()}`,
+pay:()=>{const l=D.pays.filter(p=>p.mid==U.id);return`<h2>${t('pay')}</h2>${l.map(p=>`<div class="c" style="margin-bottom:10px"><b>₹${p.amt}</b> <span class="demo">(${t('samp')})</span> ${bd(p.st)}<br><span class="demo">${p.ref?t('refL')+' '+p.ref:''}</span> ${p.st=='p_pending'?`<br><button class="btn sm" onclick="pyn(${p.id})">${t('paynow')}</button>`:''}</div>`).join('')||t('none')}<p class="demo">${t('payNote')}</p>${back()}`},
+notif:()=>{const l=D.nf.filter(n=>n.mid==U.id);return`<h2>${t('notif')}</h2>${l.map(n=>`<div class="c" style="margin-bottom:8px;${n.r?'opacity:.6':''}">${nt(n)} ${n.r?'':`<button class="btn sm ghost" onclick="D.nf[${D.nf.indexOf(n)}].r=1;draw()">✓</button>`}</div>`).join('')||t('none')}${back()}`},
+apps:()=>{const stg={local:'pl',district:'pd',state:'ps'}[U.role],l=scope().filter(m=>m.st==stg),pl=U.role=='local'?D.pays.filter(p=>p.st=='p_sub'&&scope().some(m=>m.id==p.mid)):[];
+return`<h2>${t('apps')} ${bd(stg)}</h2>${U.role=='local'?`<a class="btn sm ghost" href="#/p/register">+ ${t('addm')}</a>`:''}${l.map(m=>`<div class="c" style="margin-bottom:10px"><div class="row">${m.photo?`<img class="pv" style="width:56px;height:70px" src="${m.photo}" alt="">`:''}<div><button class="lnk" onclick="pop(${m.id})">${e(m.name)}</button> · ${e(m.biz)} · ${e(m.area)}</div></div><details><summary>${t('det')}</summary>${m.mobile?t('mobile')+': '+e(m.mobile)+'<br>':''}${m.addr?t('addr')+': '+e(m.addr)+'<br>':''}${m.baddr?t('baddr')+': '+e(m.baddr)+'<br>':''}${m.dob?t('dobS')+': '+e(m.dob)+'<br>':''}${m.idp?t('idpS')+': '+e(m.idp)+'<br>':''}${m.h.map(x=>T['h_'+x]?t('h_'+x):x).join(' → ')}</details><div class="row"><button class="btn sm" onclick="ap(${m.id},1)">${t('approve')}</button><button class="btn sm red" onclick="ap(${m.id},0)">${t('reject')}</button></div></div>`).join('')||`<p>${t('none')}</p>`}
+${pl.length?`<h2>${t('pay')}</h2>${pl.map(p=>`<div class="c" style="margin-bottom:8px"><button class="lnk" onclick="pop(${p.mid})">${e(D.m.find(m=>m.id==p.mid).name)}</button> ₹${p.amt} <button class="btn sm" onclick="vp(${p.id})">${t('verify')}</button></div>`).join('')}`:''}`},
+members:()=>{const l=scope().filter(m=>(m.name+m.biz+m.no+m.area).toLowerCase().includes(Q.toLowerCase()));return`<h2>${t('members')}</h2><input id="q" placeholder="${t('search')}" value="${e(Q)}" oninput="Q=this.value;draw();$('#q').focus()"> <button class="btn" onclick="cardsOf([${l.map(m=>m.id)}])">${t('cards_all')} (${l.filter(m=>m.st=='active'&&!oldC(m)).length})</button><br><br><div class="sc"><table><tr><th>${t('name')}</th><th>${t('number')}</th><th>${t('area')}</th><th>${t('status')}</th><th></th></tr>${l.map(m=>`<tr><td><button class="lnk" onclick="pop(${m.id})">${e(m.name)}</button><br><span class="demo">${e(m.biz)}</span></td><td>${m.no||'—'}</td><td>${e(m.area)}, ${e(m.dist)}</td><td>${bd(m.st)}</td><td>${m.st=='active'&&!oldC(m)?`<button class="btn sm ghost" onclick="cardsOf([${m.id}])">${t('cardd')}</button> `:''}<button class="btn sm ghost" onclick="rpw(${m.id})">${t('pw_reset')}</button></td></tr>`).join('')}</table></div>`},
+reports:()=>{const l=scope(),c=s=>l.filter(m=>m.st==s).length,col=D.pays.filter(p=>p.st=='p_ok').reduce((a,p)=>a+p.amt,0);return`<h2>${t('reports')}</h2><div class="g">${['active','due','tdel','del','pp','pl','pd','ps'].map(s=>`<div class="c">${bd(s)}<h3>${c(s)}</h3></div>`).join('')}<div class="c"><p>${t('coll')}</p><h3>${col}</h3></div></div><br><button class="btn" onclick="csv()">${t('csvB')}</button>${['state','admin'].includes(U.role)?`<h2>${t('audit')}</h2><div class="c demo">${D.log.map(x=>e(x)).join('<br>')}</div>`:''}`},
+admin:()=>`<h2>${t('admin')}</h2><div class="c f" style="max-width:420px;margin:12px 0"><b>${t('pw_adm')}</b><label for="rpm">${t('mobile')}</label><input id="rpm" inputmode="numeric"><button class="btn sm" onclick="rpwMob()">${t('pw_reset')}</button></div><div class="c f" style="margin-top:16px" style="max-width:420px"><label>${t('feeL')}</label><input type="number" value="${D.fee}" onchange="D.fee=+this.value;D.log.push('Fee set to '+this.value);toast(t('t_saved'))"><label style="font-weight:400"><input type="checkbox" style="width:auto" ${D.idReq?'checked':''} onchange="D.idReq=this.checked;D.log.push('ID proof '+(this.checked?'on':'off'));toast(t('t_saved'))"> ${t('idReq')}</label></div><h2>${t('imp')}</h2><div class="c f" style="max-width:520px"><p class="demo">${t('impH')}</p><input type="file" accept=".csv" onchange="csvImp(this)"></div><h2>${t('accts')}</h2><div class="sc"><table>${D.m.filter(m=>m.role!='member').map(m=>`<tr><td>${e(m.name)}</td><td><select aria-label="role" onchange="cr(${m.id},this.value)" ${m.id==U.id?'disabled':''}>${['local','district','state','admin'].map(r=>`<option value="${r}" ${m.role==r?'selected':''}>${t('r_'+r)}</option>`).join('')}</select></td></tr>`).join('')}</table></div>`};
+V.due=()=>{const l=scope().filter(m=>m.st=='due'),tl=scope().filter(m=>m.st=='tdel'),lo=U.role=='local';return`<h2>${t('due')} (${l.length})</h2>${lo?`<div class="row"><button class="btn sm" onclick="rd()">${t('dRem')}</button><button class="btn sm ghost" onclick="dn()">${t('dNot')}</button></div><br>`:''}<div class="sc"><table><tr><th>${t('name')}</th><th>${t('area')}</th><th>${t('mobile')}</th><th>${t('rsn')}</th>${lo?'<th></th>':''}</tr>${l.map(m=>`<tr><td><button class="lnk" onclick="pop(${m.id})">${e(m.name)}</button></td><td>${e(m.area)}</td><td>${e(m.mobile)}</td><td>${lo?`<select onchange="rsn(${m.id},this.value)"><option value="">—</option>${[1,2,3,4,5].map(i=>`<option value="rs${i}" ${m.rs=='rs'+i?'selected':''}>${t('rs'+i)}</option>`).join('')}</select>`:(m.rs?t(m.rs):'—')}</td>${lo?`<td>${m.rq?`<span class="b">${t('rq_pend')}</span>`:`<button class="btn sm ghost" onclick="rm(${m.id},'tdel')">${t('tdel')}</button> <button class="btn sm red" onclick="rm(${m.id},'del')">${t('delp')}</button>`}</td>`:''}</tr>`).join('')||`<tr><td colspan="5">${t('none')}</td></tr>`}</table></div>${tl.length?`<h2>${t('s_tdel')}</h2>`+tl.map(m=>`<div class="c" style="margin-bottom:8px"><button class="lnk" onclick="pop(${m.id})">${e(m.name)}</button> ${lo?`<button class="btn sm ghost" onclick="rst(${m.id})">${t('rest')}</button> <button class="btn sm red" onclick="rm(${m.id},'del')">${t('delp')}</button>`:''}</div>`).join(''):''}`};
+V.renewal=()=>`<h2>${t('renewal')}</h2><div class="c f" style="max-width:560px"><label>${t('ren_date')}</label><input type="date" value="${D.deadline}" onchange="D.deadline=this.value;D.log.push('Renewal last date: '+this.value);toast(t('t_saved'))"><p class="demo">${t('ren_info')}</p><div class="row"><button class="btn" onclick="renSend()">${t('ren_send')}</button><button class="btn ghost" onclick="renClose()">${t('ren_close')}</button></div></div>`;
+const oldC=m=>m.st=='active'&&(m.cc||1)<D.card.cycle,issueCard=m=>{m.cc=D.card.cycle;m.issue=D.card.issue;m.valid=D.card.valid};
+V.rmq=()=>{const l=scope().filter(m=>m.rq),me=U.role=='district'?'d':U.role=='state'?'s':'';return`<h2>${t('rmq')} (${l.length})</h2><p class="demo">${t('rq_info')}</p>${l.map(m=>`<div class="c" style="margin-bottom:10px"><button class="lnk" onclick="pop(${m.id})">${e(m.name)}</button> · ${e(m.area)}<br>${t(m.rq.ty=='del'?'delp':'tdel')} · ${t('rsn')}: ${m.rs?t(m.rs):'—'} <span class="b">${t(m.rq.st=='d'?'rq_d':'rq_s')}</span>${m.rq.st==me?`<div class="row"><button class="btn sm" onclick="rqAct(${m.id},1)">${t('approve')}</button><button class="btn sm red" onclick="rqAct(${m.id},0)">${t('reject')}</button></div>`:''}</div>`).join('')||`<p>${t('none')}</p>`}`};
+let CSD='';function csd(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{CSD=r.result;$('#cs_p').innerHTML=`<img src="${CSD}" alt="" style="width:100%;height:44px;object-fit:cover;border-radius:6px">`};r.readAsDataURL(f)}
+const cardMem=()=>D.m.filter(m=>m.role=='member'&&m.no&&['active','due'].includes(m.st));
+function pubCard(){if(U.role!='state')return;const is=$('#cs_i').value,va=$('#cs_v').value;if(!is||!va||va<=is){toast(t('e_cs'));return}if(!confirm(t('cs_pub')+'?'))return;const c=D.card,pv=c.cycle;c.cycle++;c.issue=is;c.valid=va;c.ds[c.cycle]=CSD||c.ds[pv];CSD='';let n=0;cardMem().forEach(m=>{if(!D.pays.some(p=>p.mid==m.id&&['p_pending','p_sub'].includes(p.st)))D.pays.push({id:Date.now()%1e6+n,mid:m.id,st:'p_pending',ref:'',amt:D.fee});D.nf.push({mid:m.id,k:'n_cardnew',r:0});n++});D.log.push('State: new card cycle '+c.cycle+' ('+is+' to '+va+'), '+n+' members notified');toast(n+' '+t('cs_n'));draw()}
+V.cardset=()=>{const c=D.card;return`<h2>${t('cardset')}</h2><div class="c f" style="max-width:620px"><p>${t('cs_cur')}: <b>${c.cycle}</b> · ${t('issue')}: <b>${c.issue}</b> · ${t('valid')}: <b>${c.valid}</b></p>${c.ds[c.cycle]?`<img src="${c.ds[c.cycle]}" alt="" style="width:100%;height:44px;object-fit:cover;border-radius:6px">`:`<p class="demo">${t('cs_def')}</p>`}<label for="cs_i">${t('issue')}</label><input id="cs_i" type="date" value="${c.valid}" onchange="$('#cs_v').value=nextY(this.value)"><label for="cs_v">${t('valid')}</label><input id="cs_v" type="date" value="${nextY(c.valid)}"><label for="cs_d">${t('cs_design')}</label><input id="cs_d" type="file" accept="image/*" onchange="csd(this)"><div id="cs_p"></div><p class="demo">${t('cs_keep')}</p><p><b>${cardMem().length}</b> ${t('cs_aff')}</p><button class="btn" onclick="pubCard()">${t('cs_pub')}</button></div>`};
+const cardH=m=>`<div class="card3 ${m.st=='expired'||oldC(m)?'expired':''}">${D.card.ds[m.cc||1]?`<img src="${D.card.ds[m.cc||1]}" alt="" style="width:100%;height:44px;object-fit:cover;border-radius:6px;margin-bottom:6px">`:''}<div class="q">QR<br>backend</div>${m.photo?`<img class="ph" src="${m.photo}" alt="">`:`<div class="ph">${e((m.name||'?')[0])}</div>`}<b>AAKRIKADA.IN</b><br><small>${t('demo')}</small><h2>${e(m.name)}</h2><div>${e(m.biz)}<br>${e(m.area)}, ${e(m.dist)}</div><p>${t('number')}: <b>${m.no}</b><br>${t('issue')}: <b>${m.issue||'—'}</b><br>${t('valid')}: <b>${m.valid}</b></p><div style="clear:both"></div>${bd(m.st)}${oldC(m)?`<p><b style="color:#b3261e">${t('c_old')}</b></p>`:''}</div>${oldC(m)?`<div class="ban np">${t('c_oldb')} <a href="#/p/pay">${t('renew')}</a></div>`:''}${renewWin(m)?`<div class="ban np">${t('renewBy')} ${D.deadline} <a href="#/p/pay">${t('renew')}</a></div>`:''}`;
+function reg(ev){ev.preventDefault();const v=i=>$('#'+i).value.trim(),er=(i,m)=>{$('#e'+i).textContent=m;return m};let bad=0;
+bad|=!!er('n',v('n')?'':t('e_n'));bad|=!!er('m',!/^\d{10}$/.test(v('m'))?t('e_m'):D.m.some(x=>x.mobile==v('m')&&x.st!='del')?t('e_dup'):'');bad|=!!er('pw0',pwOk(v('pw0'))?'':t('e_pw'));bad|=!!er('ad',v('ad')?'':t('e_ad'));bad|=!!er('p',PH?'':t('e_p'));bad|=!!er('b',v('b')?'':t('e_b'));bad|=!!er('ba',v('ba')?'':t('e_ba'));bad|=!!er('dc',$('#dc').checked?'':t('e_dc'));if(bad){document.querySelector('.er:not(:empty)').scrollIntoView({block:'center'});return false}
+const id=Date.now()%100000+100;D.m.push({id,name:v('n'),mobile:v('m'),dob:v('dob'),addr:v('ad'),baddr:v('ba'),lang:v('pl0'),photo:PH,idp:(D.idReq?($('#idp').files[0]||{}).name:'')||'',biz:v('b'),btype:v('bt'),area:v('a'),dist:v('d'),st:'pl',no:'',valid:'',pw:v('pw0'),role:'member',h:U&&U.role=='local'?['Submitted','Assisted']:['Submitted']});$('#sb').disabled=true;
+$('#papp').innerHTML=`<h2>✓ ${t('s_pl')}</h2><div class="c">${t('ref')}: <b>AKD-APP-${id}</b></div><p>${t('trackNote')}</p><br><a class="btn" href="#/">${t('home')}</a>`;return false}
+function lg(ev){ev.preventDefault();const mob=$('#lm').value.trim(),pw=$('#lp').value,all=D.m.filter(m=>m.mobile==mob),u=all.filter(m=>m.st!='del').sort((a,b)=>(a.role=='member')-(b.role=='member'))[0],gone=all.find(m=>m.st=='del'),er=x=>{$('#le').innerHTML=x;return false},A=D.att=D.att||{},ok=x=>x&&pw==(x.pw||'demo123');
+if((A[mob]||0)>=5)return er(e(t('e_lock')));if(!u&&gone&&ok(gone))return er(e(t('e_del')));if(!ok(u)){A[mob]=(A[mob]||0)+1;return er(e(t('e_login')))}A[mob]=0;
+if(u.st=='tdel'){const lc=D.m.find(x=>x.role=='local'&&x.dist==u.dist&&x.area==u.area);return er(e(t('e_tdel'))+'<br><b>'+(lc?e(lc.name)+' – '+e(lc.mobile):'')+'</b>')}
+U=u;go(u.role=='member'?'dash':cn[u.role][0]);return false}
+function ap(id,y){if(!confirm(t(y?'approve':'reject')+'?'))return;const m=D.m.find(x=>x.id==id),nx={pl:'pd',pd:'ps'};
+if(!y){m.st='rej';m.h.push('Rejected');D.nf.push({mid:id,k:'n_rej',r:0})}else if(nx[m.st]){m.h.push(m.st=='pl'?'Local approved':'District approved');D.nf.push({mid:id,k:m.st=='pl'?'n_loc':'n_dis',r:0});m.st=nx[m.st]}else{m.st='pp';m.h.push('State approved');D.pays.push({id:Date.now()%1e6,mid:id,st:'p_pending',ref:'',amt:D.fee});D.nf.push({mid:id,k:'n_ppd',r:0})}
+D.log.push(`${U.role}: ${y?'approved':'rejected'} ${m.name}`);toast(t('t_ok'));draw()}
+function pyn(id){D.pays.find(p=>p.id==id).st='p_sub';D.nf.push({mid:U.id,k:'n_sub',r:0});toast(t('t_psim'));draw()}
+function vp(id){const p=D.pays.find(x=>x.id==id),m=D.m.find(x=>x.id==p.mid);const nw=m.st=='pp';p.st='p_ok';p.ref='SIM-'+(1000+id);if(nw)m.no='AKD-'+(1000+m.id);issueCard(m);m.st='active';D.nf.push({mid:m.id,k:nw?'n_card':'n_pay',r:0});D.log.push('Payment verified for '+m.name);toast(t('t_ver'));draw()}
+function csv(){const r=['Name,No,Area,District,Status',...scope().map(m=>[m.name,m.no,m.area,m.dist,m.st].join(','))].join('\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([r],{type:'text/csv'}));a.download='members.csv';a.click()}
+let dp;addEventListener('beforeinstallprompt',x=>{x.preventDefault();dp=x});
+function inst(){if(dp){dp.prompt()}else alert(t('instMsg'))}
+const need={dash:['member'],card:['member'],pay:['member'],notif:['member'],profile:['member'],apps:['local','district','state'],members:['local','district','state','admin'],reports:['district','state','admin'],admin:['admin'],due:['local','district','state'],renewal:['state','admin'],cardset:['state'],rmq:['local','district','state']};
+const pwOk=p=>p.length>=6&&/[A-Za-z]/.test(p)&&/\d/.test(p);
+function pwv(){document.querySelectorAll('input[type=password]').forEach(i=>{if(i.dataset.pv)return;i.dataset.pv=1;const b=document.createElement('button');b.type='button';b.className='btn sm ghost pvb';b.textContent=t('show');b.onclick=()=>{const h=i.type=='password';i.type=h?'text':'password';b.textContent=t(h?'hide':'show')};i.after(b)})}
+function swAcc(){const x=D.m.find(m=>m.id==U.link);if(!x)return;D.log.push(U.name+' switched account');U=x;go(U.role=='member'?'dash':cn[U.role][0]);draw()}
+addEventListener('afterprint',()=>document.body.classList.remove('pcards'));
+function cardsOf(ids){const l=ids.map(id=>D.m.find(x=>x.id==id)).filter(m=>m&&m.st=='active'&&!oldC(m)&&scope().some(x=>x.id==m.id));if(!l.length){toast(t('none'));return}const d=document.createElement('div');d.className='mod';d.onclick=ev=>{if(ev.target==d){d.remove();document.body.classList.remove('pcards')}};d.innerHTML=`<div class="c" style="max-height:90vh;overflow:auto;max-width:460px" onclick="event.stopPropagation()"><div class="row np"><b>${l.length} ${t('cards')}</b><button class="btn" onclick="document.body.classList.add('pcards');print()">${t('print')}</button><button class="btn ghost" onclick="this.closest('.mod').remove();document.body.classList.remove('pcards')">${t('close')}</button></div>${l.map(cardH).join('')}</div>`;$('#portal').append(d)}
+function rpw(id){const m=D.m.find(x=>x.id==id);if(!m||!['local','district','state','admin'].includes(U.role)||!(U.role=='admin'||scope().some(x=>x.id==id)))return;if(!confirm(t('pw_reset')+'? '+m.name))return;const tmp='Akd'+(1000+Math.floor(Math.random()*9000));m.pw=tmp;m.mc=true;(D.att=D.att||{})[m.mobile]=0;const o=D.m.find(x=>x.id==m.link);if(o){o.pw=tmp;o.mc=true}D.log.push(U.role+': password reset for '+m.name);const d=document.createElement('div');d.className='mod';d.innerHTML=`<div class="c" role="dialog"><h3>${t('pw_reset')}</h3><p>${e(m.name)}</p><p>${t('pw_tmp')}</p><p style="font-size:22px"><b>${tmp}</b></p><button class="btn sm" onclick="this.closest('.mod').remove()">${t('close')}</button></div>`;$('#portal').append(d)}
+function rpwMob(){const mob=$('#rpm').value.trim(),m=D.m.filter(x=>x.mobile==mob&&x.st!='del').sort((a,b)=>(a.role=='member')-(b.role=='member'))[0];if(!m){toast(t('none'));return}rpw(m.id)}
+function fpw(){const mob=$('#lm').value.trim(),u=D.m.filter(m=>m.mobile==mob&&m.st!='del')[0],lc=u&&u.role=='member'?D.m.find(x=>x.role=='local'&&x.dist==u.dist&&x.area==u.area):D.m.find(x=>x.role=='admin'),msg=!u?t('fp_info2'):(u.role=='member'?t('fp_info'):t('fp_adm'))+'<br><b>'+(lc?e(lc.name)+' – '+e(lc.mobile):'')+'</b>',d=document.createElement('div');d.className='mod';d.onclick=()=>d.remove();d.innerHTML=`<div class="c" onclick="event.stopPropagation()" role="dialog"><h3>${t('fp')}</h3><p>${msg}</p><button class="btn sm" onclick="this.closest('.mod').remove()">${t('close')}</button></div>`;$('#portal').append(d)}
+function chpw(ev){ev.preventDefault();const er=m=>{$('#epc').textContent=m;return false};if($('#pc0').value!=(U.pw||'demo123'))return er(t('pw_bad'));if(!pwOk($('#pc1').value))return er(t('e_pw'));if($('#pc1').value!=$('#pc2').value)return er(t('pw_mis'));U.pw=$('#pc1').value;U.mc=false;const o=D.m.find(x=>x.id==U.link);if(o)o.pw=U.pw;D.log.push(U.name+': password changed');toast(t('pw_ok'));R=U.role=='member'?'dash':cn[U.role][0];go(R);draw();return false}
+V.pw=()=>`<h2>${t('pw_chg')}</h2>${U.mc?`<p class="demo">${t('pw_must')}</p>`:''}<form class="c f" style="max-width:420px" onsubmit="return chpw(event)"><label for="pc0">${t('pw_cur')}</label><input id="pc0" type="password"><label for="pc1">${t('pw_new')}</label><input id="pc1" type="password"><label for="pc2">${t('pw_cf')}</label><input id="pc2" type="password"><div class="er" id="epc"></div><p class="demo">${t('e_pw')}</p><button class="btn">${t('pw_chg')}</button></form>${U.mc?'':back()}`;
+need.pw=['member','local','district','state','admin'];need.progs=['local','district','state','admin'];
+const progOwn=p=>['state','admin'].includes(U.role)||(U.role=='district'&&p.lv!='state'&&p.dist==U.dist)||(U.role=='local'&&p.lv=='local'&&p.dist==U.dist&&p.area==U.area);
+const progVis=(u,p)=>p.lv=='state'||(u&&(['state','admin'].includes(u.role)||(p.dist==u.dist&&(p.lv=='district'||u.role=='district'||p.area==u.area))));
+const pcard=(p,act)=>`<div class="pcd">${p.img?`<img src="${p.img}" alt="">`:'<div class="ph0"></div>'}<h3>${e(p.ti)}</h3>${p.lv!='state'?`<span class="b" style="margin:0 10px 8px;display:inline-block">${t('lv_'+p.lv)}: ${e(p.area||p.dist)}</span>`:''}${act||''}</div>`;
+const progSec=()=>{const l=D.prog.filter(p=>progVis(U,p));return l.length?`<h2>${t('prog_h')}</h2><div class="pgr">${l.map(p=>pcard(p)).join('')}</div>`:''};
+V.progs=()=>{const l=D.prog.filter(progOwn);return`<h2>${t('progs')}</h2><p class="demo">${t('pr_info')}</p><button class="btn" onclick="progForm(0)">+ ${t('pr_add')}</button><br><br><div class="pgr">${l.map(p=>pcard(p,`<div class="row" style="padding:0 10px 10px"><button class="btn sm ghost" onclick="progForm(${p.id})">${t('pr_edit')}</button><button class="btn sm red" onclick="progDel(${p.id})">${t('pr_del')}</button></div>`)).join('')||t('none')}</div>${back()}`};
+let PIMG='';function pimg(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),k=Math.min(1,900/im.width);c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);PIMG=c.toDataURL('image/jpeg',.78);$('#prv').innerHTML=`<img src="${PIMG}" alt="" style="width:100%;height:100px;object-fit:cover;border-radius:8px">`};im.src=r.result};r.readAsDataURL(f)}
+function progL(){const l=$('#prl').value;$('#prd').style.display=l=='state'?'none':'';$('#pra').style.display=l=='local'?'':'none'}
+function progA(){$('#prar').innerHTML=optS(AR[$('#prdi').value])}
+function progForm(id){const p=id?D.prog.find(x=>x.id==id):null;if(p&&!progOwn(p))return;PIMG='';const r=U.role,top=['state','admin'].includes(r),lvs=r=='local'?['local']:r=='district'?['district','local']:['state','district','local'],d0=top?'Kottayam':U.dist,a0=r=='local'?U.area:AR[d0][0],d=document.createElement('div');d.className='mod';d.onclick=ev=>{if(ev.target==d)d.remove()};
+d.innerHTML=`<div class="c f" role="dialog" onclick="event.stopPropagation()" style="max-width:460px"><h3>${t(p?'pr_edit':'pr_add')}</h3><label for="prt">${t('pr_t')}</label><input id="prt" maxlength="80" value="${e(p?p.ti:'')}"><label for="prf">${t('pr_p')}</label><input id="prf" type="file" accept="image/*" onchange="pimg(this)"><div id="prv">${p&&p.img?`<img src="${p.img}" alt="" style="width:100%;height:100px;object-fit:cover;border-radius:8px">`:''}</div>${p?'':`<label for="prl">${t('nlv')}</label><select id="prl" onchange="progL()">${lvs.map(l=>`<option value="${l}">${t('lv_'+l)}</option>`).join('')}</select><div id="prd"><label for="prdi">${t('dist')}</label><select id="prdi" ${top?'':'disabled'} onchange="progA()">${optS(Object.keys(AR),d0)}</select></div><div id="pra"><label for="prar">${t('area')}</label><select id="prar" ${r=='local'?'disabled':''}>${optS(AR[d0],a0)}</select></div>`}<div class="er" id="epr"></div><div class="row"><button class="btn" onclick="progSave(${id||0})">${t('pr_save')}</button><button class="btn ghost" onclick="this.closest('.mod').remove()">${t('pr_cancel')}</button></div></div>`;$('#portal').append(d);if(!p)progL()}
+function progSave(id){const ti=$('#prt').value.trim(),p=id?D.prog.find(x=>x.id==id):null;if(!ti||(!p&&!PIMG)){$('#epr').textContent=t('pr_e');return}
+if(p){if(!progOwn(p))return;p.ti=ti;if(PIMG)p.img=PIMG;D.log.push(U.role+': program edited '+ti)}else{const lv=$('#prl').value,dist=lv=='state'?'':$('#prdi').value,area=lv=='local'?$('#prar').value:'';if(D.prog.filter(x=>x.lv==lv&&x.dist==dist&&x.area==area).length>=10){$('#epr').textContent=t('pr_max');return}D.prog.push({id:Date.now()%1e6,ti,img:PIMG,lv,dist,area});D.log.push(U.role+': program added '+ti)}
+document.querySelector('.mod').remove();toast(t('pr_ok'));draw()}
+function progDel(id){const p=D.prog.find(x=>x.id==id);if(!p||!progOwn(p)||!confirm(t('pr_del')+'?'))return;D.prog=D.prog.filter(x=>x.id!=id);D.log.push(U.role+': program deleted '+p.ti);toast(t('pr_gone'));draw()}
+function draw(){let r=R;const PUBR={home:'',about:'about-aakrikada',acts:'activities',mem:'p/register',contact:'contact'};if(PUBR[r]!==undefined){location.hash='#/'+PUBR[r];return}if(need[r]&&(!U||!need[r].includes(U.role))){r=U?(U.role=='member'?'dash':cn[U.role][0]):'login'}if(U&&U.mc)r='pw';if(!V[r])r=U?(U.role=='member'?'dash':cn[U.role][0]):'login';R=r;shell();$('#papp').innerHTML=V[r]();if($('#nlv'))nlc();pwv()}
+
+const _vl=V.login;
+V.login=()=>_vl()+`<div class="c" style="max-width:420px;margin-top:12px"><b>${t('login')} (demo)</b><div class="row" style="margin-top:8px">${[['9000000001','s_active'],['9000000003','s_due'],['9000000004','s_pl'],['9000000007','s_pp'],['9000000008','s_tdel']].map(([m,k])=>`<button type="button" class="btn sm ghost" onclick="ql('${m}')">${t(k)}</button>`).join('')}</div><div class="row" style="margin-top:6px">${['local','district','state','admin'].map((r,i)=>`<button type="button" class="btn sm" onclick="ql('${['9000000010','9000000020','9000000030','9000000040'][i]}')">${t('r_'+r)}</button>`).join('')}</div></div>`;
+function ql(mob){$('#lm').value=mob;$('#lp').value='demo123';lg({preventDefault(){}})}
+
+/* ===== Message chain: State -> District -> Local (WhatsApp forwarding tracker) =====
+   The system holds the official message and tracks who has forwarded it.
+   WhatsApp itself is NOT connected: each admin copies the text and ticks "forwarded" (self-reported). */
+const TODAY='2026-10-26';
+Object.assign(T,{
+msgs:['Messages','സന്ദേശങ്ങൾ','செய்திகள்'],
+m_new:['New message','പുതിയ സന്ദേശം','புதிய செய்தி'],
+m_title:['Title','തലക്കെട്ട്','தலைப்பு'],
+m_body:['Message text','സന്ദേശം','செய்தி உரை'],
+m_due:['Forward by (date)','അയക്കേണ്ട തീയതി','அனுப்ப வேண்டிய தேதி'],
+m_imp:['Mark as important','പ്രധാനമെന്ന് അടയാളപ്പെടുത്തുക','முக்கியம் எனக் குறி'],
+m_corr:['This corrects an earlier message','മുൻ സന്ദേശത്തിനുള്ള തിരുത്ത്','முந்தைய செய்திக்கான திருத்தம்'],
+m_none:['— none —','— ഇല്ല —','— இல்லை —'],
+m_board:['Also post on the members’ notice board','അംഗങ്ങളുടെ നോട്ടീസ് ബോർഡിലും പോസ്റ്റ് ചെയ്യുക','உறுப்பினர் அறிவிப்புப் பலகையிலும் இடுக'],
+m_to:['Send to','ആർക്ക് അയക്കണം','யாருக்கு அனுப்ப'],
+m_all:['Select all','എല്ലാം തിരഞ്ഞെടുക്കുക','அனைத்தையும் தேர்வு செய்'],
+m_dadm:['District admins','ജില്ലാ അഡ്മിൻമാർ','மாவட்ட நிர்வாகிகள்'],
+m_ladm:['Local admins (optional, send directly)','ലോക്കൽ അഡ്മിൻമാർ (ഓപ്ഷണൽ, നേരിട്ട്)','உள்ளூர் நிர்வாகிகள் (விருப்பம், நேரடியாக)'],
+m_send:['Send to selected','തിരഞ്ഞെടുത്തവർക്ക് അയയ്ക്കുക','தேர்ந்தவர்களுக்கு அனுப்பு'],
+m_sent:['Sent to','അയച്ചു:','அனுப்பப்பட்டது:'],
+m_copy:['Copy for WhatsApp','വാട്സ്ആപ്പിനായി കോപ്പി ചെയ്യുക','வாட்ஸ்அப்புக்கு நகலெடு'],
+m_copied:['Copied. Paste it in WhatsApp.','കോപ്പി ചെയ്തു. വാട്സ്ആപ്പിൽ പേസ്റ്റ് ചെയ്യുക.','நகலெடுக்கப்பட்டது. வாட்ஸ்அப்பில் ஒட்டவும்.'],
+m_f_d:['I have forwarded this to the local admins’ WhatsApp group','ലോക്കൽ അഡ്മിൻ ഗ്രൂപ്പിലേക്ക് അയച്ചു','உள்ளூர் நிர்வாகிகள் குழுவுக்கு அனுப்பினேன்'],
+m_f_l:['I have forwarded this to my members’ WhatsApp group','എന്റെ അംഗങ്ങളുടെ ഗ്രൂപ്പിലേക്ക് അയച്ചു','என் உறுப்பினர் குழுவுக்கு அனுப்பினேன்'],
+m_done:['Forwarded ✓','അയച്ചു ✓','அனுப்பப்பட்டது ✓'],
+m_fwdto:['Send to local admins under you','നിങ്ങളുടെ കീഴിലെ ലോക്കൽ അഡ്മിൻമാർക്ക് അയയ്ക്കുക','உங்களுக்குக் கீழுள்ள உள்ளூர் நிர்வாகிகளுக்கு அனுப்பு'],
+st_new:['Not opened','തുറന്നിട്ടില്ല','திறக்கவில்லை'],
+st_open:['Opened','തുറന്നു','திறந்தது'],
+st_not:['Not sent yet','ഇതുവരെ അയച്ചിട്ടില്ല','இன்னும் அனுப்பவில்லை'],
+st_over:['Overdue','വൈകി','தாமதம்'],
+m_notsel:['Not selected','തിരഞ്ഞെടുത്തിട്ടില്ല','தேர்வு செய்யவில்லை'],
+m_track:['Tracking','ട്രാക്കിംഗ്','கண்காணிப்பு'],
+m_direct:['Send directly','നേരിട്ട് അയയ്ക്കുക','நேரடியாக அனுப்பு'],
+m_remind:['Remind','ഓർമ്മിപ്പിക്കുക','நினைவூட்டு'],
+m_reminded:['Reminder sent (simulated)','ഓർമ്മപ്പെടുത്തൽ അയച്ചു (സിമുലേഷൻ)','நினைவூட்டல் அனுப்பப்பட்டது (மாதிரி)'],
+m_inbox:['Messages for you','നിങ്ങൾക്കുള്ള സന്ദേശങ്ങൾ','உங்களுக்கான செய்திகள்'],
+m_empty:['No messages yet.','സന്ദേശങ്ങളൊന്നുമില്ല.','செய்திகள் இல்லை.'],
+m_corr_b:['Correction to','തിരുത്ത്:','திருத்தம்:'],
+m_super:['Corrected by a later message','പിന്നീടുള്ള സന്ദേശം തിരുത്തി','பின்வரும் செய்தியால் திருத்தப்பட்டது'],
+m_from:['From','അയച്ചത്','அனுப்பியவர்'],
+m_pick:['Select at least one recipient and fill title and text.','ഒരാളെയെങ്കിലും തിരഞ്ഞെടുത്ത് തലക്കെട്ടും സന്ദേശവും നൽകുക.','குறைந்தது ஒருவரைத் தேர்ந்து தலைப்பும் உரையும் நிரப்புக.'],
+m_self:['Ticks are reported by each admin. The system cannot see inside WhatsApp.','ഓരോ അഡ്മിനും സ്വയം രേഖപ്പെടുത്തുന്ന ടിക്കുകളാണ്. വാട്സ്ആപ്പിനുള്ളിലേത് സിസ്റ്റത്തിന് കാണാൻ കഴിയില്ല.','டிக்குகளை ஒவ்வொரு நிர்வாகியும் பதிவு செய்கிறார். வாட்ஸ்அப்பிற்குள் கணினியால் பார்க்க முடியாது.'],
+m_sum_d:['Districts forwarded','ജില്ലകൾ അയച്ചത്','மாவட்டங்கள் அனுப்பியவை'],
+m_sum_l:['Locals forwarded','ലോക്കലുകൾ അയച്ചത്','உள்ளூர் அனுப்பியவை'],
+m_allacc:['More committee accounts (password demo123)','കൂടുതൽ കമ്മിറ്റി അക്കൗണ്ടുകൾ (പാസ്‌വേഡ് demo123)','மேலும் குழு கணக்குகள் (கடவுச்சொல் demo123)']
+});
+[[21,'Ernakulam'],[22,'Thrissur'],[23,'Kozhikode']].forEach(([id,d])=>D.m.push({id,name:'District Committee – '+d,mobile:'90000000'+id,dist:d,role:'district'}));
+[[51,'Kottayam','Ettumanoor'],[52,'Kottayam','Vaikom'],[53,'Kottayam','Kottayam Town'],[54,'Ernakulam','Kalamassery'],[55,'Ernakulam','Aluva'],[56,'Ernakulam','Perumbavoor'],[57,'Thrissur','Chalakudy'],[58,'Thrissur','Thrissur Town'],[59,'Kozhikode','Feroke'],[60,'Kozhikode','Kozhikode Town']].forEach(([id,d,a])=>D.m.push({id,name:'Local Committee – '+a,mobile:'90000000'+id,dist:d,area:a,role:'local'}));
+['local','district','state','admin'].forEach(r=>cn[r].splice(cn[r].indexOf('notices'),0,'msgs'));
+need.msgs=['local','district','state','admin'];
+D.msgs=[];D.mr=[];let MID=100;
+const lcs=d=>D.m.filter(x=>x.role=='local'&&x.dist==d),dss=()=>D.m.filter(x=>x.role=='district'),usr=id=>D.m.find(x=>x.id==id),an=u=>u?(u.role=='local'?u.area:u.dist):'';
+const ent=(mid,uid)=>D.mr.find(r=>r.mid==mid&&r.uid==uid),over=m=>!!m.due&&m.due<TODAY;
+const give=(mid,uid,via)=>{if(ent(mid,uid))return 0;D.mr.push({mid,uid,lv:usr(uid).role,via,st:'new',sent:TODAY,openT:'',fwdT:''});return 1};
+const mk=(ti,body,date,due,imp,corr)=>{const id=++MID;D.msgs.unshift({id,ti,body,by:30,date,due,imp,corr:corr||0,board:false});return id};
+const mst=(mid,uid,st,tm,via)=>{give(mid,uid,via||30);const r=ent(mid,uid);r.st=st;if(st=='opened')r.openT=tm;if(st=='fwd'){r.openT=tm;r.fwdT=tm}};
+{const a=mk('General body meeting – date announced','Dear members, the KSMA general body meeting will be held on 15 November 2026 at 10 am. Please inform all members in your area and confirm attendance with your local committee.','2026-10-20','2026-10-25',1);
+mst(a,20,'fwd','2026-10-21');mst(a,21,'opened','2026-10-22');mst(a,22,'new');mst(a,23,'fwd','2026-10-22');
+mst(a,10,'fwd','2026-10-22',20);mst(a,51,'opened','2026-10-23',20);mst(a,52,'new','',20);mst(a,59,'fwd','2026-10-23',23);mst(a,60,'new','',30);
+const b=mk('Membership fee: renewal window opens','Members whose membership is due can renew from the member dashboard. Local committees: please remind members in your WhatsApp groups.','2026-10-24','2026-11-05',0);
+mst(b,20,'opened','2026-10-25');mst(b,21,'new');
+const c=mk('Correction: meeting time changed','Correction to the earlier message: the general body meeting starts at 11 am, not 10 am.','2026-10-26','2026-10-30',1,a);
+mst(c,20,'new');mst(c,23,'new')}
+const mOpen=()=>D.mr.filter(r=>r.uid==U.id&&r.st=='new').forEach(r=>{r.st='opened';r.openT=TODAY});
+const chip=(r,m)=>{if(!r)return`<span class="mst not">${t('st_not')}</span>`;let s=r.st=='fwd'?`<span class="mst fwd">${t('m_done')} · ${r.fwdT}</span>`:r.st=='opened'?`<span class="mst opened">${t('st_open')}</span>`:`<span class="mst new">${t('st_new')}</span>`;if(r.st!='fwd'&&over(m))s+=` <span class="mst over">${t('st_over')}</span>`;return s};
+const mHead=m=>{const o=m.corr&&D.msgs.find(x=>x.id==m.corr),fx=D.msgs.some(x=>x.corr==m.id);return`<h3 style="margin:0 0 6px">${m.imp?'⚠ ':''}${e(m.ti)}</h3><div class="row">${o?`<span class="b">${t('m_corr_b')} ${e(o.ti)}</span>`:''}${fx?`<span class="b imp">${t('m_super')}</span>`:''}<span class="demo">${m.date}${m.due?' · '+t('m_due')+': '+m.due:''}</span></div><pre class="mb">${e(m.body)}</pre>`};
+const track=m=>{const rs=D.mr.filter(r=>r.mid==m.id),dr=rs.filter(r=>r.lv=='district'),lr=rs.filter(r=>r.lv=='local'),dd=dss().filter(d=>ent(m.id,d.id)||lcs(d.dist).some(l=>ent(m.id,l.id))),st=U.role=='state',late=rs.filter(r=>r.st!='fwd'&&over(m)).length,ns=dd.reduce((n,d)=>n+(ent(m.id,d.id)?lcs(d.dist).filter(l=>!ent(m.id,l.id)).length:0),0);
+const rows=dd.map(d=>{const rd=ent(m.id,d.id);return`<tr class="mdr"><td><b>${e(d.dist)}</b><br><small>${t('m_dadm')}</small></td><td>${rd?chip(rd,m):`<span class="mst not">${t('m_notsel')}</span>`}</td><td>${rd?(rd.via==m.by?t('lv_state'):''):''}</td><td>${st&&rd&&rd.st!='fwd'?`<button class="btn sm ghost" onclick="mRemind(${m.id},${d.id})">${t('m_remind')}</button>`:''}</td></tr>`+lcs(d.dist).map(l=>{const r=ent(m.id,l.id);return`<tr><td>↳ ${e(l.area)}</td><td>${chip(r,m)}</td><td>${r?(r.via==m.by?t('lv_state'):t('r_district')):''}</td><td>${st&&!r?`<button class="btn sm" onclick="mDirect(${m.id},${l.id})">${t('m_direct')}</button>`:st&&r.st!='fwd'?`<button class="btn sm ghost" onclick="mRemind(${m.id},${l.id})">${t('m_remind')}</button>`:''}</td></tr>`}).join('')}).join('');
+return`<div class="row" style="margin:8px 0"><span class="mst fwd">${t('m_sum_d')}: ${dr.filter(r=>r.st=='fwd').length}/${dr.length}</span><span class="mst fwd">${t('m_sum_l')}: ${lr.filter(r=>r.st=='fwd').length}/${lr.length}</span>${ns?`<span class="mst not">${t('st_not')}: ${ns}</span>`:''}${late?`<span class="mst over">${t('st_over')}: ${late}</span>`:''}</div><details><summary>${t('m_track')}</summary><div class="mtw"><table class="mt"><tr><th>${t('dist')}</th><th></th><th>${t('m_from')}</th><th></th></tr>${rows}</table></div></details>`};
+const mForm=()=>`<details class="c" style="margin-bottom:14px" open><summary><b>${t('m_new')}</b></summary><form class="f" onsubmit="return mSend(event)"><label for="mt">${t('m_title')}</label><input id="mt" maxlength="90"><label for="mbd">${t('m_body')}</label><textarea id="mbd" rows="4"></textarea><div class="two"><div><label for="mdue">${t('m_due')}</label><input id="mdue" type="date" min="${TODAY}"></div><div><label for="mcor">${t('m_corr')}</label><select id="mcor"><option value="0">${t('m_none')}</option>${D.msgs.map(x=>`<option value="${x.id}">${e(x.ti)}</option>`).join('')}</select></div></div><label class="ck"><input type="checkbox" id="mimp" style="width:auto"> ${t('m_imp')}</label><label class="ck"><input type="checkbox" id="mbrd" style="width:auto"> ${t('m_board')}</label><h3>${t('m_to')}</h3><label class="ck"><input type="checkbox" style="width:auto" onclick="document.querySelectorAll('.rd').forEach(c=>c.checked=this.checked)"> <b>${t('m_all')}</b> – ${t('m_dadm')}</label><div class="row">${dss().map(d=>`<label class="ck"><input type="checkbox" class="rd" value="${d.id}" style="width:auto"> ${e(d.dist)}</label>`).join('')}</div><details><summary>${t('m_ladm')}</summary>${dss().map(d=>`<p><b>${e(d.dist)}</b></p><div class="row">${lcs(d.dist).map(l=>`<label class="ck"><input type="checkbox" class="rl" value="${l.id}" style="width:auto"> ${e(l.area)}</label>`).join('')}</div>`).join('')}</details><br><button class="btn">${t('m_send')}</button></form></details>`;
+const mCard=(m,x)=>{const isD=U.role=='district';return`<div class="c" style="margin-bottom:12px">${mHead(m)}<p class="demo">${t('m_from')}: ${x.via==m.by?t('lv_state'):t('r_district')} · ${x.sent}</p><div class="row"><button class="btn sm ghost" onclick="mCopy(${m.id})">${t('m_copy')}</button>${x.st=='fwd'?`<span class="mst fwd">${t('m_done')} · ${x.fwdT}</span>`:`<button class="btn sm" onclick="mTick(${m.id})">${t(isD?'m_f_d':'m_f_l')}</button>`}${x.st!='fwd'&&over(m)?`<span class="mst over">${t('st_over')}</span>`:''}</div>${isD?`<h3>${t('m_fwdto')}</h3><label class="ck"><input type="checkbox" style="width:auto" onclick="document.querySelectorAll('.fl-${m.id}').forEach(c=>c.checked=this.checked)"> <b>${t('m_all')}</b></label><div class="mtw"><table class="mt">${lcs(U.dist).map(l=>{const r=ent(m.id,l.id);return`<tr><td style="min-width:40px">${r?'':`<input type="checkbox" class="fl-${m.id}" value="${l.id}" style="width:auto">`}</td><td>${e(l.area)}</td><td>${chip(r,m)}</td><td>${r&&r.st!='fwd'?`<button class="btn sm ghost" onclick="mRemind(${m.id},${l.id})">${t('m_remind')}</button>`:''}</td></tr>`}).join('')}</table></div><button class="btn sm" onclick="mFwd(${m.id})">${t('m_send')}</button>`:''}</div>`};
+V.msgs=()=>{const r=U.role;if(r=='state'||r=='admin')return`<h2>${t('msgs')}</h2>${r=='state'?mForm():''}<h3>${t('m_track')}</h3><p class="demo">${t('m_self')}</p>${D.msgs.map(m=>`<div class="c" style="margin-bottom:12px">${mHead(m)}${track(m)}</div>`).join('')||`<p>${t('m_empty')}</p>`}`;
+setTimeout(()=>{mOpen();shell()},0);return`<h2>${t('m_inbox')}</h2>${D.msgs.filter(m=>ent(m.id,U.id)).map(m=>mCard(m,ent(m.id,U.id))).join('')||`<p>${t('m_empty')}</p>`}`};
+function mSend(ev){ev.preventDefault();const ti=$('#mt').value.trim(),bo=$('#mbd').value.trim(),ds=[...document.querySelectorAll('.rd:checked')].map(x=>+x.value),ls=[...document.querySelectorAll('.rl:checked')].map(x=>+x.value);if(!ti||!bo||!(ds.length+ls.length)){toast(t('m_pick'));return false}
+const id=++MID,imp=$('#mimp').checked,brd=$('#mbrd').checked;D.msgs.unshift({id,ti,body:bo,by:U.id,date:TODAY,due:$('#mdue').value,imp,corr:+$('#mcor').value||0,board:brd});let n=0;ds.forEach(u=>n+=give(id,u,U.id));ls.forEach(u=>n+=give(id,u,U.id));
+if(brd){D.notices.unshift({k:0,ti,su:bo,d:TODAY,c:'General',lv:'state',a:'members',imp:imp?1:0});D.m.filter(m=>m.role=='member'&&m.no).forEach(m=>D.nf.push({mid:m.id,k:'n_new',r:0}))}
+D.log.push('state message: '+ti+' → '+n+' admins');toast(t('m_sent')+' '+n);draw();return false}
+function mFwd(mid){const ls=[...document.querySelectorAll('.fl-'+mid+':checked')].map(x=>+x.value);if(!ls.length){toast(t('m_pick'));return}let n=0;ls.forEach(u=>n+=give(mid,u,U.id));D.log.push('district '+U.dist+' forwarded message '+mid+' to '+n+' local admins');toast(t('m_sent')+' '+n);draw()}
+function mTick(mid){const r=ent(mid,U.id);if(r&&r.st!='fwd'){r.st='fwd';r.fwdT=TODAY;if(!r.openT)r.openT=TODAY;D.log.push(U.role+' '+an(U)+' ticked forwarded: message '+mid);toast(t('m_done'))}draw()}
+function mDirect(mid,uid){give(mid,uid,U.id);D.log.push('state sent message '+mid+' directly to '+an(usr(uid)));toast(t('m_sent')+' 1');draw()}
+function mRemind(mid,uid){D.log.push(U.role+' reminder: message '+mid+' → '+an(usr(uid)));toast(t('m_reminded'))}
+function mCopy(id){const m=D.msgs.find(x=>x.id==id),txt=(m.imp?'⚠ ':'')+m.ti+'\n\n'+m.body,done=()=>toast(t('m_copied')),fb=()=>{const a=document.createElement('textarea');a.value=txt;document.body.append(a);a.select();try{document.execCommand('copy')}catch(x){}a.remove();done()};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,fb);else fb()}
+const _vl2=V.login;
+V.login=()=>_vl2()+`<details style="max-width:420px;margin-top:10px"><summary>${t('m_allacc')}</summary><div class="row" style="margin-top:8px">${D.m.filter(x=>['district','local'].includes(x.role)).map(u=>`<button type="button" class="btn sm ghost" onclick="ql('${u.mobile}')">${t(u.role=='local'?'r_local':'r_district')} · ${e(an(u))}</button>`).join('')}</div></details>`;
+
+</script>
+<script>
+(function(){
+/* FEATURE SWITCH: set to true to bring back the Vendor List page, vendor search and the Find a Vendor buttons. */
+const SHOW_VENDORS=false;
+
+/* ---- Content: LIVE = copied from aakrikada.in. Other ml/ta strings are DRAFTS for native-speaker review.
+   Strings missing in ml/ta fall back to English. ---- */
+const SD={
+en:{brand:'Aakrikada',login:'Member Login',join:'Join as a Member',find:'Find a Vendor',more:'Read more',all:'View all',
+nav:{home:'Home',about:'About Aakrikada',ksma:'About KSMA',committee:'Our Committee',vendors:'Vendor List',activities:'Activities',notices:'Notices',contact:'Contact us'},
+title:'Recycle for a better planet',lead:'Aakrikada is an initiative of the Kerala Scrap Merchants Association (KSMA). Locate and connect with scrap vendors near you, or join the association as a member.',
+locT:'Locate our vendors',vName:'Vendor name',vDist:'District',vAll:'All districts',vBtn:'Search vendors',
+howT:'How it works',how:[['📱','Install the app','Add Aakrikada to your phone’s home screen straight from your browser. No store needed.'],['🔑','Sign up or login','Login or sign up with your credentials'],['🤝','Happy deal','Connect local vendors and close a deal']],
+aT:'About Aakrikada',aS:'Our purpose is ‘to change the way people think about scrap’.',
+aB:['Our purpose is ‘to change the way people think about scrap’. The need for sustainability cannot always be met completely with people collecting scrap from homes and business premises. There are areas where scrap collection, recycling and disposal is still a challenge.','Factors like unfair price, no unified pricing systems, lack of knowledge in handling scraps with its associated risks, improper disposal, ignorance about correct recycling methods etc are a few to name. To solve these issues the Kerala Scrap Merchants Association (KSMA) has developed a plan that rectifies all the above issues.'],
+kT:'About KSMA',kS:'A registered welfare association created in 2017.',
+kB:['The Kerala Scrap Merchants Association (KSMA) created in 2017, is a registered welfare association specifically created for the upliftment of the members and those involved in scrap business in Kerala.','KSMA has a strong presence in all the districts of Kerala whose aim is to consistently engage in social and cultural upliftment of its members and those affiliated to the scrap business.','The uniqueness of the association is that it not only educates and assists those associated, in different aspects financially, legally etc. but also prepares them to partake in various holistic activities.'],
+vT:'Find a vendor near you',vS:'Search the approved vendor directory by name or district.',vE:'Vendor list coming soon',vED:'Approved vendors will appear here once the directory is connected. No vendor records are invented in this demo.',vNone:'No vendors match your search.',vDemo:'Demo data: these vendors come from the sample membership system. Customers only see Active KSMA members.',leadNV:'Aakrikada is an initiative of the Kerala Scrap Merchants Association (KSMA). Join the association as a member and manage your membership online.',ksmaM:'KSMA member',audC:'For customers',audCT:'Find a scrap dealer near you',audCD:'Search KSMA member vendors by district, local area or type of scrap. Call or WhatsApp them directly. No login needed.',audM:'For scrap merchants',audMT:'Your member platform',audMD:'Join KSMA, track your application, get your digital membership card, pay and renew online, and read notices from your committee.',evM:'Events and meetings',pgM:'Programmes',vRes:'vendors found',
+acT:'Activities and events',acS:'Meetings, programmes and awareness campaigns of the association.',ev:['Event or programme name','Awareness campaign name','Association meeting'],evD:'Description supplied by the association.',evK:['Programme','Awareness','Meeting'],
+noT:'Notices',noS:'Announcements and circulars for members and the public.',no:[['Announcement','Notice title goes here'],['Circular','Circular title goes here'],['Meeting','Meeting announcement goes here']],noD:'Date to be set · published from the admin panel.',allC:'All',
+coT:'Our committee',coS:'KSMA is run by committees at state, district and local level. Committee members and their roles will be listed here.',lv:['State committee','District committee','Local committee'],peN:'Member name',peD:'Designation',
+teT:'Meet our satisfied clients',q:[['Anoop','Aakrikada has professionally carried out collection and disposal of scraps. The advantage of having the best monetary value while selling our scraps from home is really revolutionary. And they have really changed my perception of the scrap business.'],['Sarath','Arrived on time with the crew and did an excellent job of fulfilling the assignment by properly gathering the scrap. We are extremely delighted with them and they left the job neat and tidy. We will be delighted to contact them again in the future.']],
+ctT:'Contact us',ctS:'We are happy to help with your questions.',ctA:'Address',ctP:'Phone',ctE:'Email',spT:'Need a support',spD:'Connect with our customer care executive for your queries',call:'Call Now',wa:'WhatsApp us',
+fName:'Your name',fPhone:'Mobile number',fMsg:'Message',send:'Send message',sent:'Demo only: your message was not sent. The contact form will be connected to the backend later.',map:'Google Maps location – to be added',
+addr:['T.V.S Junction, Old Road (N.H)','South Kalamassery, Ernakulam','Kerala - India 683104'],ph:'Placeholder',
+jT:'Join as a Member',jS:'Registration is simple and takes a few steps.',js:['Personal information','Contact information','Business information','District and local area','Documents and photograph','Review and submit'],jN:'The multi-step registration form is built in the next stage. This is a preview of the steps.',
+lT:'Member Login',lC:'Committee Login',lMob:'Mobile number',lPw:'Password',lForgot:'Forgot password?',lGo:'Login',lMsg:'Demo only: login is not connected yet.',lHint:'Use the mobile number you registered with.',
+ob:'Objectives, vision and mission',obD:'To be supplied by the association. Not invented here.',home:'Home',
+foot:'Useful links',fm:'For members',fc:'Committee Login'},
+ml:{brand:'ആക്രിക്കട',login:'മെമ്പർ ലോഗിൻ',join:'അംഗമാകൂ',find:'വെണ്ടറെ കണ്ടെത്തുക',more:'കൂടുതൽ വായിക്കുക',all:'എല്ലാം കാണുക',
+nav:{home:'ഹോം',about:'ആക്രിക്കടയെക്കുറിച്ച്',ksma:'കെഎസ്എംഎയെക്കുറിച്ച്',committee:'ഞങ്ങളുടെ കമ്മിറ്റി',vendors:'വെണ്ടർ ലിസ്റ്റ്',activities:'പ്രവർത്തനങ്ങൾ',notices:'അറിയിപ്പുകൾ',contact:'ഞങ്ങളെ സമീപിക്കുക'},
+title:'ഭൂമിയെ സംരക്ഷിക്കാൻ കൈ കോർക്കൂ പുനരുപയോഗത്തിലൂടെ',lead:'കേരള സ്ക്രാപ്പ് മർച്ചന്റ്സ് അസോസിയേഷന്റെ (KSMA) ഒരു സംരംഭമാണ് ആക്രിക്കട. നിങ്ങളുടെ അടുത്തുള്ള സ്ക്രാപ്പ് വെണ്ടർമാരെ കണ്ടെത്തുക, അല്ലെങ്കിൽ അംഗമായി ചേരുക.',
+locT:'ഞങ്ങളുടെ വെണ്ടർമാരെ കണ്ടെത്തുക',vName:'വെണ്ടറുടെ പേര്',vDist:'ജില്ല',vAll:'എല്ലാ ജില്ലകളും',vBtn:'വെണ്ടർമാരെ തിരയുക',
+howT:'ഇത് എങ്ങനെ പ്രവർത്തിക്കുന്നു',how:[['📱','ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യുക','ബ്രൗസറിൽ നിന്ന് നേരിട്ട് ആക്രിക്കട ഫോണിന്റെ ഹോം സ്ക്രീനിൽ ചേർക്കാം. സ്റ്റോർ ആവശ്യമില്ല.'],['🔑','സൈൻ അപ്പ് ചെയ്യുക അല്ലെങ്കിൽ ലോഗിൻ ചെയ്യുക','നിങ്ങളുടെ ക്രെഡൻഷ്യലുകൾ ഉപയോഗിച്ച് ലോഗിൻ ചെയ്യുക അല്ലെങ്കിൽ സൈൻ അപ്പ് ചെയ്യുക'],['🤝','ഹാപ്പി ഡീൽ','പ്രാദേശിക വെണ്ടർമാരെ ബന്ധിപ്പിച്ച് ഒരു ഡീൽ അവസാനിപ്പിക്കുക']],
+aT:'ആക്രിക്കടയെക്കുറിച്ച്',aS:'സ്ക്രാപ്പിനെക്കുറിച്ച് ആളുകൾ ചിന്തിക്കുന്ന രീതി മാറ്റുക.',
+aB:['സ്ക്രാപ്പിനെക്കുറിച്ച് ആളുകൾ ചിന്തിക്കുന്ന രീതി മാറ്റുക’ എന്നതാണ് ഞങ്ങളുടെ ഉദ്ദേശം. വീടുകളിൽ നിന്നും ബിസിനസ്സ് പരിസരങ്ങളിൽ നിന്നും സ്ക്രാപ്പ് ശേഖരിക്കുന്ന ആളുകളുമായി സുസ്ഥിരതയുടെ ആവശ്യകത എല്ലായ്പ്പോഴും പൂർണ്ണമായും നിറവേറ്റാനാവില്ല.'],
+kT:'കെഎസ്എംഎയെക്കുറിച്ച്',kS:'2017-ൽ രൂപീകരിച്ച രജിസ്റ്റർ ചെയ്ത വെൽഫെയർ അസോസിയേഷൻ.',
+kB:['2017-ൽ രൂപീകരിച്ച കേരള സ്ക്രാപ്പ് മർച്ചന്റ്സ് അസോസിയേഷൻ (കെഎസ്എംഎ) അംഗങ്ങളുടെയും കേരളത്തിലെ സ്ക്രാപ്പ് ബിസിനസിൽ ഏർപ്പെട്ടിരിക്കുന്നവരുടെയും ഉന്നമനത്തിനായി പ്രത്യേകം രൂപീകരിച്ച ഒരു രജിസ്റ്റർ ചെയ്ത വെൽഫെയർ അസോസിയേഷനാണ്. കേരളത്തിലെ എല്ലാ ജില്ലകളിലും കെഎസ്എംഎയ്ക്ക് ശക്തമായ സാന്നിധ്യമുണ്ട്.'],
+vT:'നിങ്ങളുടെ അടുത്തുള്ള വെണ്ടറെ കണ്ടെത്തുക',vE:'വെണ്ടർ ലിസ്റ്റ് ഉടൻ വരുന്നു',vED:'ഡയറക്ടറി ബന്ധിപ്പിച്ചാൽ അംഗീകൃത വെണ്ടർമാർ ഇവിടെ കാണാം.',
+acT:'പ്രവർത്തനങ്ങളും പരിപാടികളും',noT:'അറിയിപ്പുകൾ',noD:'തീയതി പിന്നീട്',coT:'ഞങ്ങളുടെ കമ്മിറ്റി',coS:'സംസ്ഥാന, ജില്ല, പ്രാദേശിക തലങ്ങളിലെ കമ്മിറ്റികളാണ് KSMA നയിക്കുന്നത്. കമ്മിറ്റി അംഗങ്ങളും അവരുടെ ചുമതലകളും ഇവിടെ ചേർക്കും.',lv:['സംസ്ഥാന കമ്മിറ്റി','ജില്ലാ കമ്മിറ്റി','പ്രാദേശിക കമ്മിറ്റി'],
+teT:'ഞങ്ങളുടെ സംതൃപ്തരായ ഉപഭോക്താക്കളെ കണ്ടുമുട്ടുക',q:[['അനൂപ്','ആക്രിക്കട പ്രൊഫഷണലായി അവശിഷ്ടങ്ങളുടെ ശേഖരണവും നിർമാർജനവും നടത്തിയിട്ടുണ്ട്. സ്ക്രാപ്പ് ബിസിനസിനെക്കുറിച്ചുള്ള എന്റെ ധാരണയെ അവർ ശരിക്കും മാറ്റിമറിച്ചു.'],['ശരത്','ക്രൂവിനൊപ്പം കൃത്യസമയത്ത് എത്തി, സ്ക്രാപ്പ് ശരിയായി ശേഖരിച്ച് മികച്ച ജോലി ചെയ്തു. ഭാവിയിൽ അവരെ വീണ്ടും ബന്ധപ്പെടുന്നതിൽ ഞങ്ങൾക്ക് സന്തോഷമുണ്ട്.']],
+ctT:'ഞങ്ങളെ സമീപിക്കുക',ctA:'വിലാസം',ctP:'ഫോൺ',ctE:'ഇമെയിൽ',spT:'ഒരു പിന്തുണ വേണം',spD:'നിങ്ങളുടെ ചോദ്യങ്ങൾക്ക് ഞങ്ങളുടെ കസ്റ്റമർ കെയർ എക്സിക്യൂട്ടീവുമായി ബന്ധപ്പെടുക',call:'ഇപ്പോൾ വിളിക്കുക',wa:'വാട്സ്ആപ്പ് ചെയ്യുക',
+addr:['TVS ജംഗ്ഷൻ, പഴയ റോഡ് (NH)','സൗത്ത് കളമശ്ശേരി, എറണാകുളം','കേരളം - ഇന്ത്യ 683104'],ph:'മാതൃക',leadNV:'കേരള സ്ക്രാപ്പ് മർച്ചന്റ്സ് അസോസിയേഷന്റെ (KSMA) ഒരു സംരംഭമാണ് ആക്രിക്കട. അസോസിയേഷനിൽ അംഗമായി ചേർന്ന് അംഗത്വം ഓൺലൈനായി കൈകാര്യം ചെയ്യുക.',ksmaM:'കെഎസ്എംഎ അംഗം',audC:'ഉപഭോക്താക്കൾക്ക്',audCT:'നിങ്ങളുടെ അടുത്തുള്ള ആക്രി വ്യാപാരിയെ കണ്ടെത്തുക',audCD:'ജില്ല, പ്രദേശം, ആക്രിയുടെ തരം എന്നിവ അനുസരിച്ച് KSMA അംഗങ്ങളായ വ്യാപാരികളെ തിരയുക. നേരിട്ട് വിളിക്കുകയോ വാട്സ്ആപ്പ് ചെയ്യുകയോ ചെയ്യാം. ലോഗിൻ വേണ്ട.',audM:'ആക്രി വ്യാപാരികൾക്ക്',audMT:'നിങ്ങളുടെ അംഗത്വ പ്ലാറ്റ്ഫോം',audMD:'KSMA-യിൽ ചേരുക, അപേക്ഷയുടെ നില അറിയുക, ഡിജിറ്റൽ അംഗത്വ കാർഡ് നേടുക, ഓൺലൈനായി പണമടച്ച് പുതുക്കുക, കമ്മിറ്റിയുടെ അറിയിപ്പുകൾ വായിക്കുക.',
+jT:'അംഗമാകൂ',lT:'മെമ്പർ ലോഗിൻ',lC:'കമ്മിറ്റി ലോഗിൻ',home:'ഹോം'},
+ta:{brand:'அக்ரிகடா',login:'உறுப்பினர் உள்நுழைவு',join:'உறுப்பினராகச் சேருங்கள்',find:'விற்பனையாளரைக் கண்டறிக',more:'மேலும் படிக்க',all:'அனைத்தையும் காண்க',
+nav:{home:'முகப்பு',about:'அக்ரிகடா பற்றி',ksma:'KSMA பற்றி',committee:'எங்கள் குழு',vendors:'விற்பனையாளர் பட்டியல்',activities:'செயல்பாடுகள்',notices:'அறிவிப்புகள்',contact:'தொடர்புக்கு'},
+title:'பூமியை காக்க கைகோருங்கள் மறுபயன்பாடு மூலம்',lead:'அக்ரிகடா என்பது கேரள ஸ்க்ராப் வணிகர்கள் சங்கத்தின் (KSMA) முயற்சி. உங்களுக்கு அருகிலுள்ள ஸ்கிராப் விற்பனையாளர்களைக் கண்டறியுங்கள், அல்லது உறுப்பினராகச் சேருங்கள்.',
+locT:'எங்கள் விற்பனையாளர்களைக் கண்டறியவும்',vName:'விற்பனையாளர் பெயர்',vDist:'மாவட்டம்',vAll:'அனைத்து மாவட்டங்களும்',vBtn:'விற்பனையாளர்களைத் தேடுக',
+howT:'எப்படி இது செயல்படுகிறது',how:[['📱','செயலியை நிறுவவும்','உங்கள் உலாவியிலிருந்தே அக்ரிகடாவை தொலைபேசியின் முகப்புத் திரையில் சேர்க்கலாம். ஸ்டோர் தேவையில்லை.'],['🔑','பதிவு செய்யவும் அல்லது உள்நுழையவும்','உங்கள் சான்றுகளுடன் உள்நுழையவும் அல்லது பதிவு செய்யவும்'],['🤝','மகிழ்ச்சியான ஒப்பந்தம்','உள்ளூர் விற்பனையாளர்களை இணைத்து ஒப்பந்தத்தை முடிக்கவும்']],
+aT:'அக்ரிகடா பற்றி',aS:'ஸ்கிராப் பற்றி மக்கள் நினைக்கும் விதத்தை மாற்றுவது.',
+aB:['எங்களின் நோக்கம் ‘ஸ்கிராப் பற்றி மக்கள் நினைக்கும் விதத்தை மாற்றுவது’. வீடுகள் மற்றும் வணிக வளாகங்களில் இருந்து குப்பைகளை சேகரிக்கும் நபர்களால் நிலைத்தன்மைக்கான தேவையை எப்போதும் முழுமையாக பூர்த்தி செய்ய முடியாது.'],
+kT:'KSMA பற்றி',kS:'2017 இல் உருவாக்கப்பட்ட பதிவு செய்யப்பட்ட நலன்புரி சங்கம்.',
+kB:['2017 இல் உருவாக்கப்பட்ட கேரள ஸ்க்ராப் வணிகர்கள் சங்கம் (KSMA) என்பது, கேரளாவில் உள்ள ஸ்கிராப் வணிகத்தில் ஈடுபட்டுள்ள உறுப்பினர்கள் மற்றும் அவர்களது மேம்பாட்டிற்காக பிரத்யேகமாக உருவாக்கப்பட்ட பதிவு செய்யப்பட்ட நலன்புரி சங்கமாகும்.'],
+vT:'உங்களுக்கு அருகிலுள்ள விற்பனையாளரைக் கண்டறிக',vE:'விற்பனையாளர் பட்டியல் விரைவில்',vED:'பட்டியல் இணைக்கப்பட்டதும் அங்கீகரிக்கப்பட்ட விற்பனையாளர்கள் இங்கே தோன்றும்.',
+acT:'செயல்பாடுகள் மற்றும் நிகழ்வுகள்',noT:'அறிவிப்புகள்',noD:'தேதி பின்னர்',coT:'எங்கள் குழு',coS:'KSMA மாநில, மாவட்ட மற்றும் உள்ளூர் அளவிலான குழுக்களால் நடத்தப்படுகிறது. குழு உறுப்பினர்கள் மற்றும் அவர்களின் பொறுப்புகள் இங்கே பட்டியலிடப்படும்.',lv:['மாநிலக் குழு','மாவட்டக் குழு','உள்ளூர் குழு'],
+teT:'எங்கள் திருப்திகரமான வாடிக்கையாளர்களை சந்திக்கவும்',q:[['அனூப்','ஆக்ரிக்கடா தொழில்ரீதியாக குப்பைகளை சேகரித்து அகற்றும் பணியை மேற்கொண்டுள்ளது. ஸ்கிராப் பிசினஸைப் பற்றிய எனது கருத்தை அவர்கள் உண்மையில் மாற்றியுள்ளனர்.'],['சரத்','பணிக்குழுவினருடன் சரியான நேரத்தில் வந்து, ஸ்கிராப்பைச் சரியாகச் சேகரிப்பதன் மூலம் வேலையைச் சிறப்பாகச் செய்தார். எதிர்காலத்தில் அவர்களை மீண்டும் தொடர்புகொள்வதில் நாங்கள் மகிழ்ச்சியடைவோம்.']],
+ctT:'எங்களை தொடர்பு கொள்ள',ctA:'முகவரி',ctP:'தொலைபேசி',ctE:'மின்னஞ்சல்',spT:'ஒரு ஆதரவு வேண்டும்',spD:'உங்கள் கேள்விகளுக்கு எங்கள் வாடிக்கையாளர் பராமரிப்பு நிர்வாகியுடன் இணையவும்',call:'இப்போது அழைக்கவும்',wa:'வாட்ஸ்அப் செய்யுங்கள்',
+addr:['TVS சந்திப்பு, பழைய சாலை (NH)','தெற்கு கலமசேரி, எர்ணாகுளம்','கேரளா - இந்தியா 683104'],ph:'மாதிரி',leadNV:'அக்ரிகடா என்பது கேரள ஸ்க்ராப் வணிகர்கள் சங்கத்தின் (KSMA) முயற்சி. சங்கத்தில் உறுப்பினராகச் சேர்ந்து உங்கள் உறுப்பினர் பதிவை ஆன்லைனில் நிர்வகியுங்கள்.',ksmaM:'KSMA உறுப்பினர்',audC:'வாடிக்கையாளர்களுக்கு',audCT:'உங்களுக்கு அருகிலுள்ள ஸ்கிராப் வியாபாரியைக் கண்டறியுங்கள்',audCD:'மாவட்டம், உள்ளூர் பகுதி அல்லது ஸ்கிராப் வகை மூலம் KSMA உறுப்பினர் வியாபாரிகளைத் தேடுங்கள். நேரடியாக அழைக்கலாம் அல்லது வாட்ஸ்அப் செய்யலாம். உள்நுழைவு தேவையில்லை.',audM:'ஸ்கிராப் வணிகர்களுக்கு',audMT:'உங்கள் உறுப்பினர் தளம்',audMD:'KSMA-இல் சேருங்கள், விண்ணப்ப நிலையைக் கண்காணியுங்கள், டிஜிட்டல் உறுப்பினர் அட்டையைப் பெறுங்கள், ஆன்லைனில் கட்டணம் செலுத்திப் புதுப்பியுங்கள், குழு அறிவிப்புகளைப் படியுங்கள்.',
+jT:'உறுப்பினராகச் சேருங்கள்',lT:'உறுப்பினர் உள்நுழைவு',lC:'குழு உள்நுழைவு',home:'முகப்பு'}
+};
+const DIST=['Thiruvananthapuram','Kollam','Pathanamthitta','Alappuzha','Kottayam','Idukki','Ernakulam','Thrissur','Palakkad','Malappuram','Kozhikode','Wayanad','Kannur','Kasaragod'];
+let LG='en',S={q:'',d:'',a:'',bt:'',cat:'',vmsg:false};
+const T=k=>SD[LG][k]??SD.en[k];
+const N=k=>SD[LG].nav?.[k]??SD.en.nav[k];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---- Illustrations (temporary, drawn in SVG; replace with real photos) ---- */
+const SKY='<rect width="480" height="340" fill="#e9f5ee"/><circle cx="400" cy="64" r="34" fill="#f2b632"/><path d="M0 236Q120 168 240 226T480 206V340H0Z" fill="#bfe3cf"/><path d="M0 268Q160 218 300 262T480 248V340H0Z" fill="#8fcfb0"/>';
+const TREE=(x,s=1)=>`<g transform="translate(${x} 226) scale(${s})"><rect x="-4" y="20" width="8" height="34" fill="#7a5a3a"/><circle cx="0" cy="8" r="26" fill="#2f9a63"/><circle cx="-14" cy="26" r="16" fill="#3aae72"/></g>`;
+const ROAD='<rect y="292" width="480" height="48" fill="#3d4a8f"/><path d="M0 316H480" stroke="#fff" stroke-width="3" stroke-dasharray="26 18" opacity=".6"/>';
+const TRUCK='<g><rect x="40" y="196" width="156" height="90" rx="8" fill="#fff"/><rect x="40" y="196" width="156" height="14" rx="6" fill="#17794a"/><text x="118" y="262" font-size="54" text-anchor="middle" fill="#17794a">♻</text><path d="M196 226h40l22 28v32H196z" fill="#1e2a78"/><path d="M206 234h26l14 18h-40z" fill="#cfe3ff"/><circle cx="92" cy="288" r="19" fill="#161a33"/><circle cx="92" cy="288" r="8" fill="#ccc"/><circle cx="226" cy="288" r="19" fill="#161a33"/><circle cx="226" cy="288" r="8" fill="#ccc"/></g>';
+const BINS='<g><rect x="312" y="236" width="52" height="56" rx="6" fill="#17794a"/><rect x="306" y="228" width="64" height="12" rx="5" fill="#0f5c37"/><text x="338" y="274" font-size="26" text-anchor="middle" fill="#fff">♻</text><rect x="376" y="246" width="48" height="46" rx="6" fill="#1e2a78"/><rect x="370" y="238" width="60" height="11" rx="5" fill="#12184f"/><rect x="438" y="262" width="34" height="30" fill="#8a93b8"/><rect x="442" y="246" width="30" height="18" fill="#a9b1d1"/></g>';
+const SC={
+ hero:`<svg viewBox="0 0 480 340" role="img" aria-label="Illustration of a recycling truck and bins">${SKY}${TREE(24,.9)}${TREE(452,1)}${ROAD}${BINS}${TRUCK}</svg>`,
+ plant:`<svg viewBox="0 0 480 340" role="img" aria-label="Illustration of a recycling centre">${SKY}<rect x="70" y="150" width="230" height="140" fill="#fff"/><rect x="70" y="130" width="230" height="26" fill="#1e2a78"/><rect x="320" y="90" width="34" height="200" fill="#8a93b8"/><rect x="316" y="82" width="42" height="14" fill="#6b749c"/><rect x="95" y="180" width="60" height="110" fill="#e9f5ee"/><rect x="175" y="180" width="105" height="48" fill="#cfe3ff"/><text x="228" y="266" font-size="46" text-anchor="middle" fill="#17794a">♻</text><rect x="380" y="250" width="70" height="42" fill="#8a93b8"/><rect x="390" y="228" width="50" height="24" fill="#a9b1d1"/>${TREE(40,.9)}${ROAD}</svg>`,
+ people:`<svg viewBox="0 0 480 340" role="img" aria-label="Illustration of a community">${SKY}${[[110,'#1e2a78'],[200,'#17794a'],[290,'#f2b632'],[380,'#c0392b']].map(([x,c],i)=>`<g transform="translate(${x} ${i%2?10:0})"><circle cx="0" cy="170" r="26" fill="#f1c9a5"/><path d="M-42 292a42 62 0 0 1 84 0z" fill="${c}"/></g>`).join('')}${ROAD}</svg>`,
+ office:`<svg viewBox="0 0 480 340" role="img" aria-label="Illustration of an association office">${SKY}<rect x="130" y="120" width="220" height="172" fill="#fff"/><path d="M118 124L240 66l122 58z" fill="#1e2a78"/>${[0,1,2].map(i=>`<rect x="${158+i*64}" y="150" width="40" height="44" fill="#cfe3ff"/>`).join('')}<rect x="216" y="226" width="48" height="66" fill="#17794a"/>${TREE(70,.9)}${TREE(420,.9)}${ROAD}</svg>`
+};
+const ART=(k,cls='')=>`<div class="${cls}">${SC[k]}</div>`;
+
+/* ---- Shared pieces ---- */
+const ph=()=>`<span class="phtag">${esc(T('ph'))}</span>`;
+const banner=(title,key,art)=>`<section class="ban"><div class="c"><div><p class="crumb"><a href="#/">${esc(N('home'))}</a> / ${esc(N(key))}</p><h1>${esc(title)}</h1></div>${ART(art,'bi')}</section>`.replace('</div></section>','</div></div></section>');
+const sh=(t,s,act='')=>`<div class="sh"><div><h2 class="t">${esc(t)}</h2>${s?`<p class="sub">${esc(s)}</p>`:''}</div>${act}</div>`;
+const link=(h,t,c='s')=>`<a class="btn ${c}" href="${h}">${esc(t)}</a>`;
+const areasFor=d=>d&&AR[d]?AR[d]:[...new Set(Object.values(AR).flat())];
+const searchForm=full=>`<form class="card sform${full?' sfull':''}" id="sf"><label class="fl"><span>${esc(T('vName'))}</span><input type="search" id="sq" value="${esc(S.q)}" autocomplete="off"></label><label class="fl"><span>${esc(T('vDist'))}</span><select id="sd"><option value="">${esc(T('vAll'))}</option>${DIST.map(d=>`<option${S.d===d?' selected':''}>${d}</option>`).join('')}</select></label>${full?`<label class="fl"><span>${esc(t('area'))}</span><select id="sa"><option value="">${esc(t('all'))}</option>${areasFor(S.d).map(a=>`<option${S.a===a?' selected':''}>${a}</option>`).join('')}</select></label><label class="fl"><span>${esc(t('btype'))}</span><select id="sb2"><option value="">${esc(t('all'))}</option>${['bt1','bt2','bt3','bt4','bt5'].map(k=>`<option value="${k}"${S.bt===k?' selected':''}>${esc(t(k))}</option>`).join('')}</select></label>`:''}<button class="btn" type="submit">${esc(T('vBtn'))}</button></form>`;
+const cards=(arr,fn)=>arr.map(fn).join('');
+const evCards=()=>cards(T('ev'),(t,i)=>`<article class="card img">${ART(['hero','plant','people'][i],'')}<div class="b">${ph()}<h3>${esc(t)}</h3><p>${esc(T('evD'))}</p></div></article>`);
+const pubNotices=()=>D.notices.filter(n=>visFor(null,n));
+const noCards=lim=>{const l=pubNotices().filter(n=>lim||!S.cat||n.c===S.cat).slice(0,lim||99);return l.length?l.map(n=>`<article class="card${n.imp?' imp':''}"><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="cb">${esc(t('c_'+n.c))}</span><span class="phtag">${esc(t('demo'))}</span></div><h3>${esc(n.ti||t('nt'+n.k))}</h3><p>${esc(n.ti?n.su:t('ns'+n.k))}</p><p style="font-size:.9rem">\u{1F4C5} ${esc(n.d)}</p></article>`).join(''):`<div class="empty">${esc(t('none'))}</div>`};
+const progCards=lim=>{const l=D.prog.filter(p=>progVis(null,p)).slice(0,lim||99);return l.length?l.map((p,i)=>`<article class="card img">${p.img?`<img src="${p.img}" alt="" style="width:100%;height:200px;object-fit:cover">`:ART(['hero','plant','people'][i%3])}<div class="b"><span class="phtag">${esc(t('demo'))}</span><h3>${esc(p.ti)}</h3></div></article>`).join(''):`<div class="empty">${esc(t('none'))}</div>`};
+const vend=()=>D.m.filter(m=>m.role=='member'&&m.st=='active'&&!oldC(m)).filter(m=>(!S.d||m.dist==S.d)&&(!S.a||m.area==S.a)&&(!S.bt||m.btype==S.bt)&&(!S.q||(m.biz+' '+m.name+' '+m.area).toLowerCase().includes(S.q.toLowerCase())));
+const vCards=l=>l.map(m=>`<article class="card"><span class="phtag">${esc(t('demo'))}</span><h3>${esc(m.biz)}</h3><p>\u{1F4CD} ${esc(m.area)}, ${esc(m.dist)}</p><p><span class="cb">\u2713 ${esc(T('ksmaM'))}</span> <span class="cb">${esc(t(m.btype||'bt5'))}</span></p><p style="font-size:.9rem">${esc(t('valid'))}: ${esc(m.valid)}</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:auto"><a class="btn sm" href="tel:+91${esc(m.mobile)}">${esc(T('call'))}</a><a class="btn s sm" href="https://wa.me/91${esc(m.mobile)}" rel="noopener">${esc(T('wa'))}</a></div></article>`).join('');
+const peopleCards=(n=3)=>T('lv').slice(0,n).map(l=>`<article class="card" style="align-items:center;text-align:center">${ph()}<div class="avatar" aria-hidden="true">👤</div><h3>${esc(T('peN'))}</h3><p>${esc(T('peD'))} · ${esc(l)}</p></article>`).join('');
+const quotes=()=>T('q').map(([n,t])=>`<figure class="card q"><p lang="${LG}">“${esc(t)}”</p><b>${esc(n)}</b></figure>`).join('');
+const contactList=()=>`<ul class="cl"><li><strong>${esc(T('ctA'))}</strong>${T('addr').map(a=>`<span style="display:block">${esc(a)}</span>`).join('')}</li><li><strong>${esc(T('ctP'))}</strong><a href="tel:+919656884000">+91 9656 884 000</a></li><li><strong>${esc(T('ctE'))}</strong><a href="mailto:info@aakrikada.in">info@aakrikada.in</a></li></ul>`;
+
+/* ---- Pages ---- */
+const P={
+home:()=>`
+<section class="hero"><div class="c hg"><div><p class="kick">${esc(T('brand').toUpperCase())}</p><h1>${esc(T('title'))}</h1><p class="lead">${esc(SHOW_VENDORS?T('lead'):T('leadNV'))}</p>
+<div class="hb">${SHOW_VENDORS?link('#/vendors',T('find'),'l'):''}${link('#/p/register',T('join'),SHOW_VENDORS?'g':'l')}${link('#/p/login',T('login'),'g')}</div></div>${ART('hero','hart')}</div></section>
+${SHOW_VENDORS?`<div class="c sbox">${searchForm()}</div>`:''}
+<section class="sec"><div class="c grid g2"${SHOW_VENDORS?'':' style="grid-template-columns:1fr"'}>
+${SHOW_VENDORS?`<article class="card aud"><span class="audi" aria-hidden="true">\u{1F50D}</span><h2 class="t" style="font-size:1.3rem;margin:0"><small class="audk">${esc(T('audC'))}</small><br>${esc(T('audCT'))}</h2><p>${esc(T('audCD'))}</p><div style="margin-top:auto">${link('#/vendors',T('find'),'')}</div></article>`:''}
+<article class="card aud"><span class="audi" aria-hidden="true">\u{1FAAA}</span><h2 class="t" style="font-size:1.3rem;margin:0"><small class="audk">${esc(T('audM'))}</small><br>${esc(T('audMT'))}</h2><p>${esc(T('audMD'))}</p><div style="margin-top:auto;display:flex;gap:8px;flex-wrap:wrap">${link('#/p/register',T('join'),'')}${link('#/p/login',T('login'))}</div></article>
+</div></section>
+<section class="sec alt"><div class="c">${sh(T('howT'))}<ol class="grid g3">${T('how').filter((h,i)=>SHOW_VENDORS||i<2).map((h,i)=>`<li class="card step"><span class="n" aria-hidden="true">${h[0]}<b>${i+1}</b></span><h3>${esc(h[1])}</h3><p>${esc(h[2])}</p></li>`).join('')}</ol></div></section>
+<section class="sec"><div class="c grid g2">
+<article class="card img">${ART('plant')}<div class="b"><h2 class="t" style="font-size:1.5rem">${esc(T('aT'))}</h2><p>${esc(T('aB')[0])}</p>${link('#/about-aakrikada',T('more'))}</div></article>
+<article class="card img">${ART('office')}<div class="b"><h2 class="t" style="font-size:1.5rem">${esc(T('kT'))}</h2><p>${esc(T('kB')[0])}</p>${link('#/about-ksma',T('more'))}</div></article></div></section>
+<section class="sec alt"><div class="c">${sh(T('acT'),T('acS'),link('#/activities',T('all')))}<div class="grid g3">${progCards(3)}</div></div></section>
+<section class="sec"><div class="c">${sh(T('noT'),T('noS'),link('#/notices',T('all')))}<div class="grid g3">${noCards(3)}</div></div></section>
+<section class="sec alt"><div class="c">${sh(T('coT'),T('coS'),link('#/committee',T('all')))}<div class="grid g3">${peopleCards()}</div></div></section>
+<section class="sec"><div class="c">${sh(T('teT'))}<div class="grid g2">${quotes()}</div></div></section>
+<section class="sec dark"><div class="c">${sh(T('ctT'),T('ctS'))}<div class="cg">${contactList()}<div class="card"><h3>${esc(T('spT'))}</h3><p>${esc(T('spD'))}</p><div style="display:flex;flex-wrap:wrap;gap:8px"><a class="btn" href="tel:+919656884000">${esc(T('call'))}</a><a class="btn s" href="https://wa.me/919656884000" rel="noopener">${esc(T('wa'))}</a></div></div></div></div></section>`,
+
+about:()=>banner(T('aT'),'about','plant')+`<section class="sec"><div class="c split"><div class="prose">${T('aB').map(p=>`<p>${esc(p)}</p>`).join('')}<div style="margin-top:20px;display:flex;gap:8px;flex-wrap:wrap">${SHOW_VENDORS?link('#/vendors',T('find'),''):''}${link('#/about-ksma',N('ksma'))}</div></div>${ART('hero','hart')}</div></section>
+<section class="sec alt"><div class="c">${sh(T('ob'))}<div class="card">${ph()}<p>${esc(T('obD'))}</p></div></div></section>`,
+
+ksma:()=>banner(T('kT'),'ksma','office')+`<section class="sec"><div class="c split">${ART('people','hart')}<div class="prose">${T('kB').map(p=>`<p>${esc(p)}</p>`).join('')}<div style="margin-top:20px;display:flex;gap:8px;flex-wrap:wrap">${link('#/committee',N('committee'),'')}${link('#/p/register',T('join'))}</div></div></div></section>
+<section class="sec alt"><div class="c">${sh(T('ob'))}<div class="card">${ph()}<p>${esc(T('obD'))}</p></div></div></section>`,
+
+committee:()=>banner(T('coT'),'committee','people')+`<section class="sec"><div class="c"><p class="sub" style="margin:0 0 24px">${esc(T('coS'))}</p>${T('lv').map(l=>`<h2 class="t" style="font-size:1.35rem;margin:28px 0 16px">${esc(l)}</h2><div class="grid g3">${peopleCards(1)}${peopleCards(1)}${peopleCards(1)}</div>`).join('')}</div></section>`,
+
+vendors:()=>{const l=vend();return banner(T('vT'),'vendors','hero')+`<section class="sec"><div class="c"><p class="sub" style="margin:0 0 16px">${esc(T('vS'))}</p>${searchForm(true)}<p class="msg" role="status">${esc(T('vDemo'))}</p><h2 class="t" style="font-size:1.2rem;margin:20px 0 12px">${l.length} ${esc(T('vRes'))}</h2>${l.length?`<div class="grid g3">${vCards(l)}</div>`:`<div class="empty"><h3>${esc(T('vNone'))}</h3></div>`}</div></section>`},
+
+activities:()=>banner(T('acT'),'activities','hero')+`<section class="sec"><div class="c">${sh(T('pgM'),T('acS'))}<div class="grid g3">${progCards()}</div></div></section><section class="sec alt"><div class="c">${sh(T('evM'))}<div class="grid g3">${evCards()}</div></div></section>`,
+
+notices:()=>banner(T('noT'),'notices','office')+`<section class="sec"><div class="c">${sh(T('noT'),T('noS'))}<div class="chips" role="group"><button class="chip${S.cat?'':' on'}" data-cat="">${esc(T('allC'))}</button>${[...new Set(pubNotices().map(n=>n.c))].map(c=>`<button class="chip${S.cat===c?' on':''}" data-cat="${c}">${esc(t('c_'+c))}</button>`).join('')}</div><div class="grid g3">${noCards()}</div></div></section>`,
+
+contact:()=>banner(T('ctT'),'contact','office')+`<section class="sec"><div class="c cg"><div>${sh(T('ctT'),T('ctS'))}${contactList()}<a class="btn" href="https://wa.me/919656884000" rel="noopener">${esc(T('wa'))}</a></div>
+<div><form class="card frm" id="cf" style="max-width:none"><label class="fl"><span>${esc(T('fName'))}</span><input required></label><label class="fl"><span>${esc(T('fPhone'))}</span><input type="tel" inputmode="tel" required></label><label class="fl"><span>${esc(T('fMsg'))}</span><textarea required></textarea></label><button class="btn" type="submit">${esc(T('send'))}</button><p class="msg" id="cm" role="status" hidden style="margin:0">${esc(T('sent'))}</p></form></div></div>
+<div class="c" style="margin-top:24px"><div class="mapph"><div>${ph()}<p style="margin-top:8px">${esc(T('map'))}</p></div></div></div></section>`
+};
+const ROUTES={'':'home','about-aakrikada':'about','about-ksma':'ksma',committee:'committee',vendors:'vendors',activities:'activities',notices:'notices',contact:'contact',join:'join',login:'login'};
+if(!SHOW_VENDORS)delete ROUTES.vendors;
+const NAV_ALL=[['home','#/'],['about','#/about-aakrikada'],['ksma','#/about-ksma'],['committee','#/committee'],['vendors','#/vendors'],['activities','#/activities'],['notices','#/notices'],['contact','#/contact']];
+const NAV=NAV_ALL.filter(([k])=>SHOW_VENDORS||k!=='vendors');
+
+function chrome(cur){
+ const hm=U?(U.role=='member'?'dash':cn[U.role][0]):null;
+ document.documentElement.lang=LG;
+ $('#brand').textContent=$('#brand2').textContent=T('brand');
+ const lb=U?[t('dash'),'#/p/'+hm]:[T('login'),'#/p/login'];$('#loginBtn').textContent=$('#loginBtn2').textContent=lb[0];$('#loginBtn').href=$('#loginBtn2').href=lb[1];
+ const jb=$('#joinBtn2');if(U){jb.textContent=t('logout');jb.href='#/';jb.onclick=()=>{__logout();return false}}else{jb.textContent=T('join');jb.href='#/p/register';jb.onclick=null}
+ $('#lang').value=$('#lang2').value=LG;
+ const a=NAV.map(([k,h])=>`<a href="${h}"${NAVKEY[cur]===k?' class="on" aria-current="page"':''}>${esc(N(k))}</a>`).join('');
+ $('#nav').innerHTML=a;
+ $('#menu').innerHTML=NAV.map(([k,h])=>`<a class="n" href="${h}">${esc(N(k))}</a>`).join('')+(U?`<a class="btn" href="#/p/${hm}">${esc(t('dash'))}</a><a class="btn s" href="#/" onclick="__logout();return false">${esc(t('logout'))}</a>`:`<a class="btn" href="#/p/register">${esc(T('join'))}</a><a class="btn s" href="#/p/login">${esc(T('login'))}</a>`);
+ $('#foot').innerHTML=`<div><a class="logo" style="color:#fff" href="#/"><span class="mark" style="background:#fff;color:var(--p)">♻</span>${esc(T('brand'))}</a><p style="margin-top:12px">Kerala Scrap Merchants Association (KSMA)</p></div>
+ <div><h2>${esc(SD.en.foot)}</h2><ul>${NAV.map(([k,h])=>`<li><a href="${h}">${esc(N(k))}</a></li>`).join('')}<li><a href="#/p/register">${esc(T('join'))}</a></li><li><a href="#/p/login">${esc(T('login'))}</a></li></ul></div>
+ <div><h2>${esc(T('ctT'))}</h2>${T('addr').map(x=>`<p>${esc(x)}</p>`).join('')}<p><a href="tel:+919656884000">+91 9656 884 000</a></p><p><a href="mailto:info@aakrikada.in">info@aakrikada.in</a></p></div>`;
+}
+const NAVKEY={home:'home',about:'about',ksma:'ksma',committee:'committee',vendors:'vendors',activities:'activities',notices:'notices',contact:'contact',join:null,login:null};
+
+function bind(r){
+ const sf=$('#sf');if(sf){sf.onsubmit=e=>{e.preventDefault();S.q=$('#sq').value.trim();S.d=$('#sd').value;S.a=$('#sa')?$('#sa').value:'';S.bt=$('#sb2')?$('#sb2').value:'';S.vmsg=true;if(r==='vendors')render();else location.hash='#/vendors'};const sd=$('#sd');if(sd&&$('#sa'))sd.onchange=()=>{S.q=$('#sq').value.trim();S.d=sd.value;S.a='';S.bt=$('#sb2').value;render()}}
+ document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{S.cat=b.dataset.cat;render()});
+ document.querySelectorAll('[data-lt]').forEach(b=>b.onclick=()=>{S.committee=b.dataset.lt==='1';render()});
+ const cf=$('#cf');if(cf)cf.onsubmit=e=>{e.preventDefault();$('#cm').hidden=false};
+ const lf=$('#lf');if(lf)lf.onsubmit=e=>{e.preventDefault();$('#lm').hidden=false};
+ const fp=$('#fp');if(fp)fp.onclick=e=>{e.preventDefault();$('#lm').hidden=false};
+}
+window.__logout=()=>{U=null;if(location.hash===''||location.hash==='#/')render();else location.hash='#/'};
+function renderPortal(r){
+ $('#app').hidden=true;$('#portal').hidden=false;
+ R=r;draw();
+ if(location.hash.startsWith('#/p/')){chrome('portal')}
+ $('#menu').classList.remove('open');$('#bg').textContent='\u2630';$('#bg').setAttribute('aria-expanded','false');
+ document.title='Member portal \u2013 Aakrikada (demo)';
+}
+function render(){
+ const key=location.hash.replace(/^#\/?/,'');
+ if(key==='p'||key.indexOf('p/')===0){return renderPortal(key.slice(2)||'login')}
+ if(key==='vendors'&&!SHOW_VENDORS){location.replace('#/');return}
+ if(key==='join'){location.replace('#/p/register');return}
+ if(key==='login'){location.replace('#/p/login');return}
+ $('#portal').hidden=true;$('#app').hidden=false;
+ const r=ROUTES[key]??'home';
+ if(r!=='vendors'&&r!=='home')S.vmsg=false;
+ $('#app').innerHTML=P[r]();
+ chrome(r);bind(r);
+ $('#menu').classList.remove('open');$('#bg').textContent='\u2630';$('#bg').setAttribute('aria-expanded','false');
+ document.title=(r==='home'?'':(N(NAVKEY[r])||'')+' \u2013 ')+'Aakrikada \u2013 KSMA (demo)';
+}
+window.addEventListener('hashchange',()=>{render();window.scrollTo(0,0);const f=$('#portal').hidden?$('#app'):$('#papp');f&&f.focus({preventScroll:true})});
+['#lang','#lang2'].forEach(i=>$(i).onchange=e=>{LG=e.target.value;L={en:0,ml:1,ta:2}[LG];render()});
+$('#bg').onclick=()=>{const o=$('#menu').classList.toggle('open');$('#bg').setAttribute('aria-expanded',o);$('#bg').textContent=o?'✕':'☰'};
+$('#yr').textContent=new Date().getFullYear();
+render();
+
+})();
+</script>
+<style>.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}</style>
+<script>
+/* PWA: service worker + install button. Needs https (the Cloudflare link is https) or localhost. */
+(function(){
+ if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(e=>console.warn('SW failed',e)))}
+ const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+ let dp=null;const b=document.getElementById('inst');
+ addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;if(!standalone)b.hidden=false});
+ b.onclick=async()=>{if(!dp)return;dp.prompt();await dp.userChoice;dp=null;b.hidden=true};
+ addEventListener('appinstalled',()=>{b.hidden=true});
+ if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!standalone)document.getElementById('iosTip').hidden=false;
+})();
+</script>
+</body>
+</html>
