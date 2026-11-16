@@ -51,3 +51,24 @@ The `public` folder is a complete static site. You can upload it to a free stati
 - `public/index.html` – the whole site and membership system
 - `public/manifest.webmanifest`, `public/sw.js`, `public/offline.html`, `public/icons/` – installable app (PWA)
 - `server.js` – small local web server
+
+## Brand assets and sources
+
+- Logos, colours and the certificate layout come from the files supplied by the client
+  (Aakri Kada logo, KSMA State Committee letterhead, membership certificate).
+- State committee names and phone numbers come from the letterhead. Contact details for Aakri Kada customer care come from aakrikada.in.
+  Please ask the client to confirm both before launch.
+- Signatures are NOT reproduced on the digital certificate; the signature lines are left blank.
+- Photos: none were available, so pages use the logos only. Replace with real photos when supplied.
+
+## Committee photos
+
+Put portrait photos in `public/images/committee/` (square, about 400 px). In `public/index.html` find `OFFICERS`
+and set each person's `photo` to the file path, for example `photo:'/images/committee/president.jpg'`.
+Until then the cards show initials.
+
+## Committee portraits (updated)
+
+Five portraits are in `public/images/committee/photo-1.jpg` ... `photo-5.jpg` (upload order). They are also embedded in `index.html` as `IMG.p1` ... `IMG.p5`.
+In `public/index.html` find `PHOTO_MAP` and set who is who, for example `president:'p3'`. Until then the cards show initials.
+The 9 other steering committee members and the 28 executive members are in `STEERING_MORE` and `EXECUTIVE`: replace each `null` name with `{en:'Name'}` and set the designation.
